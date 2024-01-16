@@ -1,4 +1,5 @@
 import { Food } from './app/shared/models/Food';
+import { Tag } from './app/shared/models/Tag';
 
 export const sample_foods: Food[] = [
   {
@@ -16,7 +17,7 @@ export const sample_foods: Food[] = [
     id: '2',
     name: 'Calzone',
     price: 20,
-    tags: ['FastFood', 'Calzone', 'Snack'],
+    tags: ['FastFood', 'Snack'],
     favorite: true,
     stars: 5.0,
     imageUrl: 'assets/food-standard.jpg',
@@ -27,7 +28,7 @@ export const sample_foods: Food[] = [
     id: '3',
     name: 'Lasagna',
     price: 25,
-    tags: ['FastFood', 'Lasagna', 'Lunch'],
+    tags: ['FastFood', 'Lunch'],
     favorite: false,
     stars: 3.5,
     imageUrl: 'assets/food-standard.jpg',
@@ -60,11 +61,21 @@ export const sample_foods: Food[] = [
     id: '6',
     name: 'Tiramisu',
     price: 20,
-    tags: ['Desert', 'Tiramisu'],
+    tags: ['Desert'],
     favorite: true,
     stars: 4.5,
     imageUrl: 'assets/food-standard.jpg',
     origins: ['Italy', 'Rome'],
     cookTime: '10',
   },
+];
+
+export const sample_tags: Tag[] = [
+  { name: 'All', count: 6 },
+  { name: 'FastFood', count: 3 },
+  { name: 'Pizza', count: 3 },
+  { name: 'Lunch', count: 3 },
+  { name: 'Snack', count: 1 },
+  { name: 'Vegan', count: 1 },
+  { name: 'Desert', count: 1 },
 ];

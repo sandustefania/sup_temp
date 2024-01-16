@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from '../../partials/search-bar/search-bar.component';
+import { TagsComponent } from '../../partials/tags/tags.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { SearchBarComponent } from '../../partials/search-bar/search-bar.compone
     StarRatingModule,
     FormsModule,
     SearchBarComponent,
+    TagsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -32,16 +34,12 @@ export class HomeComponent {
         this.foods = this.foodService.getAllFoodsBySearchTerm(
           params.searchTerm
         );
+      //tags
+      else if (params.tag)
+        this.foods = this.foodService.getAllFoodsByTag(params.tag);
       else this.foods = foodService.getAll();
     });
   }
-  // displayedFilter: string[] = [];
-
-  // onSearchChange(e: any) {
-  //   this.displayedFilter = this.foods
-  //     .map((food) => food.name.toLowerCase())
-  //     .filter((food) => food.includes(e.target.value));
-  // }
 
   ngOnInit() {}
 }
