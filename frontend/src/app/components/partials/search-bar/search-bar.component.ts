@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
+import { FoodService } from '../../../services/food.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,7 +12,12 @@ import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 })
 export class SearchBarComponent {
   searchTerm = '';
-  constructor(activatedRoute: ActivatedRoute, private router: Router) {
+  notFoundVisible = false;
+  constructor(
+    activatedRoute: ActivatedRoute,
+    private router: Router,
+    private foodService: FoodService
+  ) {
     activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) this.searchTerm = params.searchTerm;
     });

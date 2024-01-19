@@ -7,6 +7,7 @@ import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from '../../partials/search-bar/search-bar.component';
 import { TagsComponent } from '../../partials/tags/tags.component';
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import { TagsComponent } from '../../partials/tags/tags.component';
     FormsModule,
     SearchBarComponent,
     TagsComponent,
+    NotFoundComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
