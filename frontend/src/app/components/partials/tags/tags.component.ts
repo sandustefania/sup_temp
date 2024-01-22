@@ -14,6 +14,8 @@ import { RouterLink } from '@angular/router';
 export class TagsComponent {
   tags?: Tag[];
   constructor(foodService: FoodService) {
-    this.tags = foodService.getAllTags();
+    foodService
+      .getAllTags()
+      .subscribe((serverTags) => (this.tags = serverTags));
   }
 }

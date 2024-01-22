@@ -25,7 +25,10 @@ export class FoodDetailsComponent {
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
-      if (params.id) this.foodDetails = foodService.getFoodById(params.id);
+      if (params.id)
+        foodService.getFoodById(params.id).subscribe((serverFood) => {
+          this.foodDetails = serverFood;
+        });
     });
   }
 
