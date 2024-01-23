@@ -1,5 +1,6 @@
 import { Food } from './app/shared/models/Food';
 import { Tag } from './app/shared/models/Tag';
+import { User } from './app/shared/models/User';
 
 export const sample_foods: Food[] = [
   {
@@ -78,4 +79,35 @@ export const sample_tags: Tag[] = [
   { name: 'Snack', count: 1 },
   { name: 'Vegan', count: 1 },
   { name: 'Desert', count: 1 },
+];
+
+export const sample_users: any[] = [
+  {
+    name: 'Dragos',
+    email: 'dragos@gmail.com',
+    password: '111',
+    address: 'iasi',
+    isAdmin: true,
+  },
+  {
+    name: 'Stefania',
+    email: 'stefania@gmail.com',
+    password: '222',
+    address: 'iasi',
+    isAdmin: false,
+  },
+  {
+    name: 'Eduard',
+    email: 'eduard@gmail.com',
+    password: '333',
+    address: 'iasi',
+    isAdmin: false,
+  },
+  {
+    name: 'Paula',
+    email: 'paula@gmail.com',
+    password: '444',
+    address: 'iasi',
+    isAdmin: false,
+  },
 ];
