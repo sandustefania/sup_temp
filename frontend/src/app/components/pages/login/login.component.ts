@@ -8,13 +8,13 @@ import {
 import { TitleComponent } from '../../partials/title/title.component';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { User } from '../../../shared/models/User';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, TitleComponent, CommonModule],
+  imports: [ReactiveFormsModule, TitleComponent, CommonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

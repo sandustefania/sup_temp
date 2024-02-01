@@ -41,6 +41,9 @@ export class CartService {
   getCartObservable(): Observable<Cart> {
     return this.cartSubject.asObservable();
   }
+  getCart(): Cart {
+    return this.cartSubject.value; //gets the latest value of the cart
+  }
 
   private setCartToLocalStorage(): void {
     this.cart.totalPrice = this.cart.items.reduce(

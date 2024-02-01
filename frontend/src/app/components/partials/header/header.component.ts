@@ -27,6 +27,7 @@ export class HeaderComponent {
   }
 
   get isAuth() {
-    return this.user.token;
+    // const token = localStorage.getItem('accessToken');
+    return this.user.id;
   }
 }
