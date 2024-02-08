@@ -26,8 +26,10 @@ router.post(
   "/login",
   expressAsyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    const user = await UserModel.findOne({ email, password });
-    if (user) {
+    const user = await UserModel.findOne({ email });
+
+    //trebuie comparata parola introdusa cu parola cryptata din bd
+    if (user && (await bcrypt.compare(password, user.password))) {
       res.send(generateTokenResponse(user));
     } else {
       res.status(400).send("User name or password is not valid!");
@@ -57,8 +59,10 @@ router.post(
       res.status(HTTP_BAD_REQUEST).send("Users already exists, please login!");
       return;
     }
-    //encrypt the password
+
+    //encrypt the password before saving
     const encryptedPassword = await bcrypt.hash(password, 10);
+
     const newUser: User = {
       id: "",
       name: name,

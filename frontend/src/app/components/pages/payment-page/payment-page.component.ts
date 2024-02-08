@@ -25,7 +25,13 @@ export class PaymentPageComponent {
   newOrder: Order = new Order();
   constructor(private orderService: OrderService, router: Router) {
     this.orderService.getNewOrderForCurrentUser().subscribe({
-      next: (newOrder) => (this.newOrder = newOrder),
+      next: (newOrder) => {
+        this.newOrder = newOrder;
+        //credentials to pay
+        console.log(
+          'email: sb-q47ynv29154651@personal.example.com, password: X!Ab4y$<'
+        );
+      },
       error: () => router.navigateByUrl('/checkout'),
     });
   }
