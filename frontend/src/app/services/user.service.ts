@@ -30,12 +30,17 @@ export class UserService {
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
         next: (user) => {
+          // user.token = JSON?.parse(
+          //   localStorage?.getItem('accessToken') || '{}'
+          // );
           this.setUserToLocalStorage(user);
           this.userSubject.next(user),
             this.toastrService.success(
               `Welcome ${user.name}!`,
               'Login Successful'
             );
+          console.log(user);
+          console.log('finally', user.token);
         },
         error: (errorResponse) => {
           this.toastrService.error(errorResponse.error, 'Login Failed');

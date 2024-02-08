@@ -7,11 +7,12 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { loadingInterceptor } from './app/shared/interceptors/loading.interceptor';
+import { authInterceptor } from './app/auth/auth.interceptor';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    provideHttpClient(withInterceptors([loadingInterceptor])),
+    provideHttpClient(withInterceptors([loadingInterceptor, authInterceptor])),
     provideAnimations(),
     importProvidersFrom(
       ToastrModule.forRoot({

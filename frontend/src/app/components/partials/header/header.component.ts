@@ -19,7 +19,9 @@ export class HeaderComponent {
     cartService
       .getCartObservable()
       .subscribe((newCart) => (this.cartQuantity = newCart.totalCount));
-    userService.userObservable.subscribe((user) => (this.user = user));
+    userService.userObservable.subscribe((user) => {
+      this.user = user;
+    });
   }
 
   logout() {
@@ -27,7 +29,6 @@ export class HeaderComponent {
   }
 
   get isAuth() {
-    // const token = localStorage.getItem('accessToken');
-    return this.user.id;
+    return this.user.token;
   }
 }
