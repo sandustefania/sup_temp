@@ -7,15 +7,15 @@ const router = Router();
 
 //seed data to database
 router.get(
-  "/seed",
+  "/seedNewItem",
   expressAsyncHandler(async (req, res) => {
     const foodsCount = await FoodModel.countDocuments();
-    if (foodsCount > 0) {
-      res.send("Seed is already done");
-      return;
-    }
+    // if (foodsCount >0) {
+    //   res.send("Seed is already done");
+    //   return;
+    // }
 
-    await FoodModel.create(sample_foods);
+    await FoodModel.create(sample_foods[foodsCount - 1]);
     res.send("Seed is Done!");
   })
 );

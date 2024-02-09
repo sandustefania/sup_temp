@@ -65,6 +65,28 @@ export const sample_foods: any[] = [
     origins: ["Italy", "Rome"],
     cookTime: "10",
   },
+  {
+    id: "7",
+    name: "Pizza Quatro formaggi",
+    price: 20,
+    tags: ["Pizza"],
+    favorite: true,
+    stars: 4.5,
+    imageUrl: "assets/quatro-formaggi.jpg",
+    origins: ["Italy", "Rome"],
+    cookTime: "10",
+  },
+  {
+    id: "8",
+    name: "Pizza Margherita",
+    price: 20,
+    tags: ["Pizza"],
+    favorite: true,
+    stars: 4.5,
+    imageUrl: "assets/margherita.jpg",
+    origins: ["Italy", "Rome"],
+    cookTime: "10",
+  },
 ];
 
 export const sample_tags: any[] = [
