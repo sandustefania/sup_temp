@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  AbstractControlOptions,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -35,15 +36,15 @@ export class RegisterPageComponent {
   ngOnInit() {
     this.registerForm = this.fb.group(
       {
-        name: ['', [Validators.required, Validators.minLength(3)]],
+        name: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(5)]],
         confirmPassword: ['', Validators.required],
-        address: ['', [Validators.required, Validators.minLength(10)]],
+        address: ['', [Validators.required, Validators.minLength(5)]],
       },
       {
         validators: PasswordsMatchValidator('password', 'confirmPassword'),
-      }
+      } as AbstractControlOptions
     );
 
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
@@ -63,7 +64,7 @@ export class RegisterPageComponent {
       confirmPassword: fv.confirmPassword,
       address: fv.address,
     };
-    this.userService.register(user).subscribe((_) => {
+    this.userService.register(user).subscribe(() => {
       this.router.navigateByUrl(this.returnUrl);
     });
   }

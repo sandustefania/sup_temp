@@ -32,7 +32,7 @@
         </div>
         <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
           <div *ngIf="fc.password.errors.required">Should not be empty</div>
-          <div *ngIf="fc.password.errors.minLength">
+          <div *ngIf="fc.password.errors.minlength">
             Should be more than 5 characters
           </div>
         </div>
@@ -60,6 +60,9 @@
         </div>
         <div class="error-list" *ngIf="fc.address.errors && isSubmitted">
           <div *ngIf="fc.address.errors.required">Should not be empty</div>
+          <div *ngIf="fc.address.errors.minlength">
+            Should be more than 5 characters
+          </div>
         </div>
       </div>
       <div class="button">

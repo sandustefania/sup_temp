@@ -13,6 +13,17 @@
           <div *ngIf="fc.email.errors.email">Email is not correct</div>
         </div>
       </div>
+      <!-- <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter email..." formControlName="email" />
+        <mat-error *ngIf="fc.email.errors?.required && fc.email.touched"
+          >Should not be empty</mat-error
+        >
+        <mat-error *ngIf="fc.email.errors?.email && fc.email.dirty"
+          >Email is not correct</mat-error
+        >
+      </mat-form-field> -->
+
       <div class="input-container">
         <label>Password</label>
         <div>
@@ -26,9 +37,24 @@
           <div *ngIf="fc.password.errors.required">Should not be empty</div>
         </div>
       </div>
+
+      <!-- <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Enter password..."
+          formControlName="password"
+        />
+        <mat-error *ngIf="fc.password.errors?.required && fc.password.touched"
+          >Should not be empty</mat-error
+        >
+      </mat-form-field> -->
+
       <div class="button">
-        <button type="submit">Login</button>
+        <!-- <button mat-raised-button color="primary" type="submit">Login</button> -->
+        <button type="submit">Submit</button>
       </div>
+      <br />
       <div class="register">
         New user? &nbsp;
         <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }"
