@@ -69,6 +69,17 @@ export const sample_foods: Food[] = [
     origins: ['Italy', 'Rome'],
     cookTime: '10',
   },
+  {
+    id: '7',
+    name: 'Cheeseburger',
+    price: 40,
+    tags: ['Burger'],
+    favorite: true,
+    stars: 4.5,
+    imageUrl: 'assets/images/burgers/cheeseburger.jpg',
+    origins: ['USA'],
+    cookTime: '10',
+  },
 ];
 
 export const sample_tags: Tag[] = [

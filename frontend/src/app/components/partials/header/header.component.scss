@@ -2,15 +2,15 @@ header {
     position: relative;
     background: white;
     padding: 0;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid var(--red);
 }
 
 a {
-    color: red;
+    color: var(--red);
 }
 
 a:hover {
-    background: red;
+    background: var(--red);
     color: white;
     cursor: pointer;
 }
@@ -36,7 +36,7 @@ ul {
         display: inline-block;
 
         span {
-            background-color: red;
+            background-color: var(--red);
             color: white;
             padding: 0.1rem 0.45rem;
             border-radius: 100rem;

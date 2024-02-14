@@ -14,6 +14,8 @@ import { OrderItemsListComponent } from '../../partials/order-items-list/order-i
 import { MapComponent } from '../../partials/map/map.component';
 import { Router } from '@angular/router';
 import { OrderService } from '../../../services/order.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-checkout-page',
@@ -23,6 +25,8 @@ import { OrderService } from '../../../services/order.service';
     ReactiveFormsModule,
     OrderItemsListComponent,
     MapComponent,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   templateUrl: './checkout-page.component.html',
   styleUrl: './checkout-page.component.scss',

@@ -5,7 +5,7 @@ import { FoodModel } from "../models/food.model";
 
 const router = Router();
 
-//seed data to database
+//seed data to database with a new Item
 router.get(
   "/seedNewItem",
   expressAsyncHandler(async (req, res) => {

@@ -13,11 +13,20 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PasswordsMatchValidator } from '../../../shared/validators/password_match_validator';
 import { IUserRegister } from '../../../shared/interfaces/IUserRegister';
 import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [TitleComponent, ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [
+    TitleComponent,
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss',
 })
