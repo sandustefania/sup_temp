@@ -8,6 +8,7 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
 import { authGuard } from './auth/guards/auth.guard';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { ContactUsPageComponent } from './components/pages/contact-us-page/contact-us-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'tag/:tag', component: HomeComponent },
   { path: 'food/:id', component: FoodDetailsComponent },
   { path: 'cart-page', component: CartComponent },
+  { path: 'contact-us', component: ContactUsPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterPageComponent },
   {

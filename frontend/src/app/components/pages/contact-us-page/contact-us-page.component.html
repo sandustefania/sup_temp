@@ -1,0 +1,32 @@
+<div class="container">
+  <!-- daca este deja autentificat sau nu, autocompletam nume+email!!! -->
+  <div class="image">
+    <img src="/assets/images/pizza/margherita.jpg" alt="pizza" />
+  </div>
+  <div class="form-info">
+    <app-title title="Contact us + Autocompletare!!"></app-title>
+
+    <form [formGroup]="contactUs" (ngSubmit)="submit()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+        <mat-error>Name is required!</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error>Email is required!</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter the message</mat-label>
+        <textarea
+          matInput
+          cols="30"
+          rows="10"
+          formControlName="message"
+        ></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

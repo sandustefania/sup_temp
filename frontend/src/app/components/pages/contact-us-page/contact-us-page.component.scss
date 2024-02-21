@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+
+}
+
+.image {
+    float: left;
+    width: 50%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.form-info {
+    padding: 2rem;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
