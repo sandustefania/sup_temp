@@ -9,6 +9,8 @@ import { authGuard } from './auth/guards/auth.guard';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { ContactUsPageComponent } from './components/pages/contact-us-page/contact-us-page.component';
+import { isAdminGuard } from './auth/guards/isAdmin.guard';
+import { ReviewsPageComponent } from './components/pages/add-review-page/reviews-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +21,14 @@ export const routes: Routes = [
   { path: 'contact-us', component: ContactUsPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterPageComponent },
+  { path: 'reviews', component: ReviewsPageComponent },
+
+  {
+    path: 'admin-page',
+    loadChildren: () =>
+      import('./shared/routes/adminRoutes').then((r) => r.ADMIN_ROUTES),
+    canActivate: [isAdminGuard],
+  },
   {
     path: 'checkout',
     component: CheckoutPageComponent,

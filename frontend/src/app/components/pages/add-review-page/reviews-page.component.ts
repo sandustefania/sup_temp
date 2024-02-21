@@ -1,64 +1,65 @@
 import { Component } from '@angular/core';
+import { TitleComponent } from '../../partials/title/title.component';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { RestaurantService } from '../../../services/restaurant.service';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { TitleComponent } from '../../partials/title/title.component';
+import { Router } from '@angular/router';
+import { ViewReviewsPageComponent } from '../view-reviews-page/view-reviews-page.component';
 
 @Component({
-  selector: 'app-contact-us-page',
+  selector: 'app-reviews-page',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
     TitleComponent,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ViewReviewsPageComponent,
   ],
-  templateUrl: './contact-us-page.component.html',
-  styleUrl: './contact-us-page.component.scss',
+  templateUrl: './reviews-page.component.html',
+  styleUrl: './reviews-page.component.scss',
 })
-export class ContactUsPageComponent {
-  contactUsForm!: FormGroup;
+export class ReviewsPageComponent {
+  reviewForm!: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private fb: FormBuilder,
     private restaurantService: RestaurantService,
-    private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   ) {}
-
-  //daca este deja autentificat sau nu, autocompletam nume+email!!!
-
   ngOnInit() {
-    this.contactUsForm = this.formBuilder.group({
+    this.reviewForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
+      review: ['', Validators.required],
+      rating: [10, Validators.required],
     });
   }
 
   get fc() {
-    return this.contactUsForm.controls;
+    return this.reviewForm.controls;
   }
 
   submit() {
     this.restaurantService
-      .addMessage({
+      .addReview({
         name: this.fc.name.value,
         email: this.fc.email.value,
-        message: this.fc.message.value,
+        review: this.fc.review.value,
+        rating: this.fc.rating.value,
       })
       .subscribe(() => {
-        this.toastrService.success('Message SENT!');
+        this.toastrService.success('Review SENT!');
         this.router.navigateByUrl('/');
       });
   }

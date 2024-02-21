@@ -1,0 +1,28 @@
+<div class="container">
+  <app-title title="Leave us a review!"></app-title>
+  <form [formGroup]="reviewForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" />
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-error>Email is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Review</mat-label>
+      <textarea matInput cols="30" rows="5" formControlName="review"></textarea>
+      <mat-error>Review is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Rating (0 to 10)</mat-label>
+      <input matInput type="number" min="0" max="10" formControlName="rating" />
+      <mat-error>Number from 0 to 10!</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
+<app-view-reviews-page></app-view-reviews-page>

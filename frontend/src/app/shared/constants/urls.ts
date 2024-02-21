@@ -22,5 +22,12 @@ export const ORDER_NEW_FOR_CURRENT_USER_URL =
 export const ORDER_PAY_URL = ORDERS_URL + '/pay';
 export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 
-//-----Contact Us
-export const CONTACT_US_URL = BASE_URL + '/api/restaurant/contactUs';
+//-----Restaurant
+export const RESTAURANT_URL = BASE_URL + '/api/restaurant';
+//-----Messages
+export const ADD_MESSAGE_URL = RESTAURANT_URL + '/addMessage';
+export const GET_MESSAGES_URL = RESTAURANT_URL + '/getMessages';
+
+//-----Review
+export const ADD_REVIEW_URL = RESTAURANT_URL + '/addReview';
+export const GET_REVIEWS_URL = RESTAURANT_URL + '/getReviews';

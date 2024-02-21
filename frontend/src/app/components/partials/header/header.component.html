@@ -3,7 +3,15 @@
     <a routerLink="/" class="logo">The Restaurant</a>
     <nav>
       <ul>
+        <li *ngIf="isAdmin">
+          <a
+            routerLink="/admin-page"
+            style="background-color: red; color: white"
+            >Admin page</a
+          >
+        </li>
         <li><a routerLink="/contact-us">Contact Us</a></li>
+        <li><a routerLink="/reviews">Reviews</a></li>
         <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>
@@ -15,7 +23,7 @@
             <a (click)="logout()">Logout</a>
           </div>
         </li>
-        <li>
+        <li *ngIf="isAuth">
           <a routerLink="/cart-page"
             >Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span></a
           >
