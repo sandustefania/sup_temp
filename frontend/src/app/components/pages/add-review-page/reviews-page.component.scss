@@ -1,13 +1,34 @@
 .container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
-    width: 100%;
+
 
     form {
         display: flex;
         flex-direction: column;
-        width: 40%;
+        padding: 3rem 0 0 8rem;
+        flex: 0 1 40%;
+
+        * {
+            width: 100%;
+        }
+
+
     }
+
+    .view-reviews-container {
+        flex: 0 1 60%;
+
+    }
+}
+
+.rating-container div {
+    display: flex;
+}
+
+.main-container {
+    display: flex;
+    background-color: #fafafa;
+
 }

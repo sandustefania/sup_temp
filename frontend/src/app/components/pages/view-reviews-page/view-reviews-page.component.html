@@ -1,8 +1,32 @@
-<ul>
-  <li *ngFor="let review of reviews">
-    <p>{{ review.name }}</p>
-    <p>{{ review.email }}</p>
-    <p>{{ review.review }}</p>
-    <p>{{ review.rating }}</p>
-  </li>
-</ul>
+<div class="container">
+  <ul>
+    <li *ngFor="let review of reviews" class="review-container">
+      <div class="">
+        <img
+          src="/assets/images/user.jpg"
+          width="60"
+          height="60"
+          alt="profile"
+        />
+        <div>
+          <p>{{ review.name }}</p>
+          <p class="date">
+            <em>{{ review.createdAt | date }}</em>
+          </p>
+        </div>
+      </div>
+      <star-rating
+        [starType]="'svg'"
+        [rating]="review.rating"
+        [readOnly]="true"
+        class="star-rating"
+      ></star-rating>
+      <br />
+      <p>
+        <b>{{ review.review }}</b>
+      </p>
+
+      <p>{{ review.rating }} / 5</p>
+    </li>
+  </ul>
+</div>

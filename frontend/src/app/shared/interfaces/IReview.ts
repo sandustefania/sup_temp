@@ -3,4 +3,5 @@ export interface IReview {
   email: string;
   review: string;
   rating: number;
+  createdAt?: string;
 }

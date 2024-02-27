@@ -12,6 +12,7 @@ import { RestaurantService } from '../../../services/restaurant.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TitleComponent } from '../../partials/title/title.component';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-contact-us-page',
@@ -33,15 +34,15 @@ export class ContactUsPageComponent {
     private formBuilder: FormBuilder,
     private restaurantService: RestaurantService,
     private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private userService: UserService
   ) {}
 
-  //daca este deja autentificat sau nu, autocompletam nume+email!!!
-
   ngOnInit() {
+    const { name, email } = this.userService.currentUser;
     this.contactUsForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      name: ['' || name, Validators.required],
+      email: ['' || email, [Validators.required, Validators.email]],
       message: ['', Validators.required],
     });
   }

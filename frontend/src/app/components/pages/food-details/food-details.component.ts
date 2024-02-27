@@ -25,7 +25,6 @@ export class FoodDetailsComponent {
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
-      console.log(params.id);
       if (params.id)
         foodService.getFoodById(params.id).subscribe((serverFood) => {
           this.foodDetails = serverFood;
