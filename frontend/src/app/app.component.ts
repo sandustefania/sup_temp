@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './components/partials/loading/loading.component';
+import { FooterComponent } from './components/partials/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { LoadingComponent } from './components/partials/loading/loading.componen
     HomeComponent,
     HttpClientModule,
     LoadingComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

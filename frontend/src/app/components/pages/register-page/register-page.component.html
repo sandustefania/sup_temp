@@ -1,91 +1,87 @@
 <div class="container">
-  <div class="details">
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
     <app-title title="Register"></app-title>
-    <form [formGroup]="registerForm" (ngSubmit)="submit()">
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="name">Name</mat-label>
-          <input type="text" matInput formControlName="name" />
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label for="name">Name</mat-label>
+        <input type="text" matInput formControlName="name" />
 
-          <mat-error *ngIf="fc.name.errors?.required"
-            >Should not be empty</mat-error
-          >
-        </mat-form-field>
-      </div>
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="email">Email</mat-label>
-          <input type="email" matInput formControlName="email" />
-          <mat-error *ngIf="fc.email.errors?.required"
-            >Should not be empty</mat-error
-          >
-          <mat-error *ngIf="fc.email.errors?.email"
-            >Email is not correct</mat-error
-          >
-        </mat-form-field>
-      </div>
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="password">Password</mat-label>
-          <input
-            matInput
-            type="password"
-            placeholder="Password"
-            formControlName="password"
-          />
-          <mat-error *ngIf="fc.password.errors?.required"
-            >Should not be empty</mat-error
-          >
-          <mat-error *ngIf="fc.password.errors?.minlength">
-            Minimum 5 characters!
-          </mat-error>
-        </mat-form-field>
-      </div>
-
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="confirmPassword">Confirm Password</mat-label>
-
-          <input
-            matInput
-            type="password"
-            placeholder="Confirm password"
-            formControlName="confirmPassword"
-          />
-          <mat-error *ngIf="fc.confirmPassword.errors"
-            >Passwords should match!</mat-error
-          >
-        </mat-form-field>
-      </div>
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="address">Address</mat-label>
-          <input
-            matInput
-            type="text"
-            placeholder="Address"
-            formControlName="address"
-          />
-          <mat-error *ngIf="fc.address.errors?.required"
-            >Should not be empty</mat-error
-          >
-          <mat-error *ngIf="fc.address.errors?.minlength">
-            Minimum 5 characters!
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="button">
-        <button mat-raised-button color="primary" type="submit">
-          Register
-        </button>
-      </div>
-      <br />
-      <div class="login">
-        Already a user? &nbsp;
-        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
-          Login Here</a
+        <mat-error *ngIf="fc.name.errors?.required"
+          >Should not be empty</mat-error
         >
-      </div>
-    </form>
-  </div>
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label for="email">Email</mat-label>
+        <input type="email" matInput formControlName="email" />
+        <mat-error *ngIf="fc.email.errors?.required"
+          >Should not be empty</mat-error
+        >
+        <mat-error *ngIf="fc.email.errors?.email"
+          >Email is not correct</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label for="password">Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="fc.password.errors?.required"
+          >Should not be empty</mat-error
+        >
+        <mat-error *ngIf="fc.password.errors?.minlength">
+          Minimum 5 characters!
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label for="confirmPassword">Confirm Password</mat-label>
+
+        <input
+          matInput
+          type="password"
+          placeholder="Confirm password"
+          formControlName="confirmPassword"
+        />
+        <mat-error *ngIf="fc.confirmPassword.errors"
+          >Passwords should match!</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label for="address">Address</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Address"
+          formControlName="address"
+        />
+        <mat-error *ngIf="fc.address.errors?.required"
+          >Should not be empty</mat-error
+        >
+        <mat-error *ngIf="fc.address.errors?.minlength">
+          Minimum 5 characters!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="button">
+      <button mat-raised-button color="primary" type="submit">Register</button>
+    </div>
+    <br />
+    <div class="login">
+      Already a user? &nbsp;
+      <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+        Login Here</a
+      >
+    </div>
+  </form>
 </div>

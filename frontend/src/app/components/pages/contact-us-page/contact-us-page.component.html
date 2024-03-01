@@ -1,11 +1,8 @@
 <div class="container">
-  <div class="image">
-    <img src="/assets/images/pizza/margherita.jpg" alt="pizza" />
-  </div>
+  <div class="image"></div>
   <div class="form-info">
-    <app-title title="Contact us + Autocompletare!!"></app-title>
-
     <form [formGroup]="contactUsForm" (ngSubmit)="submit()">
+      <app-title title="Contact us"></app-title>
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name" />
@@ -21,7 +18,7 @@
         <textarea
           matInput
           cols="30"
-          rows="10"
+          rows="5"
           formControlName="message"
         ></textarea>
       </mat-form-field>

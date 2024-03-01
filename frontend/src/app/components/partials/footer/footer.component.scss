@@ -1,0 +1,44 @@
+.container {
+    background-color: var(--red);
+    opacity: 0.8;
+    padding: 2rem 10rem;
+    display: flex;
+    justify-content: space-between;
+
+    .left-side {
+        display: flex;
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            padding-right: 5rem;
+        }
+
+        .about-us {
+            display: flex;
+            flex-direction: column;
+            padding-right: 5rem;
+        }
+
+        .follow-us {
+            display: flex;
+            flex-direction: column;
+
+            .social-media {
+                margin: 0.5rem;
+            }
+        }
+    }
+
+    .right-side {
+        .email {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .copyright {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

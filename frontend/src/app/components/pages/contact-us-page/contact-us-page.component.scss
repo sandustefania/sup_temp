@@ -1,22 +1,28 @@
 .container {
     display: flex;
-
+    height: 90vh;
 }
 
 .image {
     float: left;
     width: 50%;
+    background-image: url("/assets/images/contact-us.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 50%;
 
-    img {
-        width: 100%;
-    }
 }
 
 .form-info {
     padding: 2rem;
+    flex: 50%;
+    display: flex;
+    align-items: center;
 
     form {
         display: flex;
         flex-direction: column;
+        width: 50%;
     }
 }
