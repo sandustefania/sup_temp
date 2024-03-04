@@ -3,6 +3,9 @@ header {
     background: white;
     padding: 0;
     border-bottom: 1px solid var(--red);
+    position: sticky;
+    top: 0px;
+    z-index: 99;
 }
 
 a {
@@ -12,13 +15,14 @@ a {
 a:hover {
     background: var(--red);
     color: white;
-    cursor: pointer;
 }
 
 .container {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+
 }
 
 a.logo {

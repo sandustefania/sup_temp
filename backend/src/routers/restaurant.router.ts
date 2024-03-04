@@ -2,6 +2,7 @@ import { Router } from "express";
 import expressAsyncHandler from "express-async-handler";
 import { ContactUsModel } from "../models/contactUs.model";
 import { ReviewModel } from "../models/review.model";
+import { EmailNewsletterModel } from "../models/emailNewsletter.model";
 
 const router = Router();
 
@@ -42,4 +43,23 @@ router.get(
     res.send(reviews);
   })
 );
+
+router.post(
+  "/addEmailNewsletter",
+  expressAsyncHandler(async (req, res) => {
+    const { email } = req.body;
+    const addEmailNewsletter = new EmailNewsletterModel({ email });
+    await addEmailNewsletter.save();
+    res.send(addEmailNewsletter);
+  })
+);
+
+router.get(
+  "/getEmailNewsletter",
+  expressAsyncHandler(async (req, res) => {
+    const emails = await EmailNewsletterModel.find();
+    res.send(emails);
+  })
+);
+
 export default router;

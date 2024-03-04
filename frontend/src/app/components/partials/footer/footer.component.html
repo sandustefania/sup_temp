@@ -11,8 +11,16 @@
     </div>
     <div class="about-us">
       <h2>About us</h2>
-      <span>Reviews</span>
-      <span>Contact</span>
+      <span
+        ><a href="/reviews" style="color: black">
+          <strong>Reviews</strong>
+        </a>
+      </span>
+      <span
+        ><a href="/contact-us" style="color: black">
+          <strong>Contact Us</strong>
+        </a>
+      </span>
     </div>
     <div class="follow-us">
       <h2>Follow us on</h2>
@@ -56,10 +64,23 @@
     </div>
   </div>
   <div class="right-side">
-    <div class="email">
-      <h2>Newsletter</h2>
-      <input type="text" spanlaceholder="Enter your email" />
+    <div class="newsletter">
+      <h2>News Letter</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter your email..."
+          class="newsletter-input"
+          #email
+        />
+        <button type="submit" (click)="addEmailNewsletter(email.value)">
+          Submit
+        </button>
+      </div>
     </div>
-    <div class="cospanyright">cospanyright</div>
+    <br />
+    <div class="copyright">
+      &copy; {{ currentYear }}, Dragos Paizan. All rights reserved.
+    </div>
   </div>
 </footer>

@@ -73,7 +73,8 @@ router.post(
       email: email.toLowerCase(),
       password: encryptedPassword,
       address: address,
-      isAdmin: false,
+      //orice new user e admin
+      isAdmin: true,
     };
     const dbUser = await UserModel.create(newUser); //o sa genereze automat id-ul
     res.send(generateTokenResponse(dbUser));

@@ -31,3 +31,7 @@ export const GET_MESSAGES_URL = RESTAURANT_URL + '/getMessages';
 //-----Review
 export const ADD_REVIEW_URL = RESTAURANT_URL + '/addReview';
 export const GET_REVIEWS_URL = RESTAURANT_URL + '/getReviews';
+
+//-----Newsletter
+export const ADD_EMAIL_NEWSLETTER_URL = RESTAURANT_URL + '/addEmailNewsletter';
+export const GET_EMAIL_NEWSLETTER_URL = RESTAURANT_URL + '/getEmailNewsletter';
