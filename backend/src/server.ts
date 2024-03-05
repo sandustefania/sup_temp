@@ -9,6 +9,7 @@ import userRouter from "./routers/user.router";
 import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
 import restaurantRouter from "./routers/restaurant.router";
+import path from "path";
 
 dbConnect();
 const app = express();
@@ -26,6 +27,11 @@ app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/restaurant", restaurantRouter);
+
+app.use(express.static("public"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 const port = 5000;
 app.listen(port, () => {
