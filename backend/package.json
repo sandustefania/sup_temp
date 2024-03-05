@@ -6,12 +6,13 @@
   "scripts": {
     "start": "cd src && nodemon server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"npm install && tsc"
+    "build": "npm install && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.11.24",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
