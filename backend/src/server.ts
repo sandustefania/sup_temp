@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-// process.env.MONGO_URI //i have access to .env file
+// process.env.MONGO_URI; //i have access to .env file
 
 import express from "express";
 import cors from "cors";
