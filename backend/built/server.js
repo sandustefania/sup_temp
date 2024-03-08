@@ -28,7 +28,7 @@ app.use("/api/orders", order_router_1.default);
 app.use("/api/restaurant", restaurant_router_1.default);
 app.use(express_1.default.static("public"));
 app.get("*", function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, "public", "browser", "index.html"));
+    res.sendFile(path_1.default.join(__dirname, "public", "index.html"));
 });
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
