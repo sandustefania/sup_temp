@@ -18,8 +18,9 @@ app.use(express.json());
 //cors for development time (localhost:4200--->localhost:5000)
 app.use(
   cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT"],
     credentials: true,
-    origin: ["http://localhost:4200"],
   })
 );
 

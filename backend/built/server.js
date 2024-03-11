@@ -19,8 +19,9 @@ var app = (0, express_1.default)();
 app.use(express_1.default.json());
 //cors for development time (localhost:4200--->localhost:5000)
 app.use((0, cors_1.default)({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT"],
     credentials: true,
-    origin: ["http://localhost:4200"],
 }));
 app.use("/api/foods", food_router_1.default);
 app.use("/api/users", user_router_1.default);
