@@ -28,9 +28,11 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/restaurant", restaurantRouter);
 
-app.use(express.static("public"));
+app.use(express.static("public/browser"));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  const htmlfile = path.join(__dirname, "public", "browser", "index.html");
+  console.log({ htmlfile });
+  res.sendFile(htmlfile);
 });
 
 const port = process.env.PORT || 5000;
