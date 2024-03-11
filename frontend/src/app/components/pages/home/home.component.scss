@@ -6,10 +6,13 @@ ul {
     list-style-type: none;
     padding: 0;
 
+
     img {
         height: 14.5rem;
         object-fit: cover
     }
+
+
 }
 
 li a {
@@ -22,10 +25,12 @@ li a {
     flex-direction: column;
     overflow: hidden;
     color: var(--red);
+    padding-bottom: 1rem;
 
     &:hover {
         opacity: 0.9;
-        cursor: pointer
+        cursor: pointer;
+        box-shadow: var(--itemBoxShadow)
     }
 }
 
