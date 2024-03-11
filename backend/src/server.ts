@@ -18,8 +18,11 @@ app.use(express.json());
 //cors for development time (localhost:4200--->localhost:5000)
 app.use(
   cors({
-    origin: "*",
     credentials: true,
+    origin: [
+      "http://localhost:4200",
+      "https://therestaurant-k8mq.onrender.com",
+    ],
   })
 );
 
