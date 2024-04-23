@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+
 dotenv.config();
 // process.env.MONGO_URI; //i have access to .env file
 
@@ -10,6 +11,7 @@ import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
 import restaurantRouter from "./routers/restaurant.router";
 import path from "path";
+const multer = require("multer");
 
 dbConnect();
 const app = express();
@@ -34,7 +36,6 @@ app.use("/api/restaurant", restaurantRouter);
 app.use(express.static("public/browser"));
 app.get("*", (req, res) => {
   const htmlfile = path.join(__dirname, "public", "browser", "index.html");
-  console.log({ htmlfile });
   res.sendFile(htmlfile);
 });
 

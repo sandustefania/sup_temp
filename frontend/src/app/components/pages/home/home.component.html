@@ -6,8 +6,16 @@
 ></app-not-found>
 <ul>
   <li *ngFor="let food of foods">
+    <button
+      *ngIf="userService.currentUser.isAdmin"
+      (click)="deleteItem(food.id)"
+    >
+      Delete item
+    </button>
     <a routerLink="/food/{{ food.id }}">
-      <a routerLink="/"><img [src]="food.imageUrl" [alt]="food.name" /></a>
+      <a routerLink="/food/{{ food.id }}"
+        ><img [src]="food.imageUrl" [alt]="food.name"
+      /></a>
 
       <div class="content">
         <div class="name">

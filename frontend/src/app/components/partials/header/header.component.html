@@ -1,6 +1,6 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">The Restaurant</a>
+    <a routerLink="/" class="logo">SUP IASI</a>
     <nav>
       <ul>
         <li *ngIf="isAdmin">
@@ -11,7 +11,9 @@
           >
         </li>
         <li><a routerLink="/contact-us">Contact Us</a></li>
+        <li><a routerLink="/rent-sup">Rent SUP!</a></li>
         <li><a routerLink="/reviews">Reviews</a></li>
+        <li><a routerLink="/locations">Locations</a></li>
         <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>

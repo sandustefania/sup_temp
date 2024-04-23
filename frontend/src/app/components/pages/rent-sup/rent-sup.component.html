@@ -1,0 +1,12 @@
+<div class="main-container">
+  <h1>RENT A SUP!</h1>
+  <h2>Sups Available : {{ numberSupsAvailable }}</h2>
+  <mat-card class="demo-inline-calendar-card">
+    <mat-calendar
+      [(selected)]="selectedDate"
+      [minDate]="minDate"
+      (selectedChange)="select($event)"
+    ></mat-calendar>
+  </mat-card>
+  <p>Selected date: {{ selectedDate | date }}</p>
+</div>

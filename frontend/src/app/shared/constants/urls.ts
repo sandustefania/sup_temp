@@ -1,9 +1,9 @@
 import { environment } from '../../../environments/environment';
 
-// const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'http://localhost:5000';
 // const BASE_URL = environment.production ? '' : 'http://localhost:5000';
-const production = process.env.NODE_ENV === 'production';
-const BASE_URL = production ? '' : 'http://localhost:5000/';
+// const production = process.env.NODE_ENV === 'production';
+// const BASE_URL = production ? '' : 'http://localhost:5000/';
 
 export const FOODS_URL = BASE_URL + '/api/foods';
 export const FOODS_TAGS_URL = FOODS_URL + '/tags';
@@ -29,6 +29,12 @@ export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 
 //-----Restaurant
 export const RESTAURANT_URL = BASE_URL + '/api/restaurant';
+//-----Add-Food-Item
+
+export const WEATHER = RESTAURANT_URL + '/weather';
+
+export const ADD_FOOD_ITEM_URL = RESTAURANT_URL + '/addFoodItem';
+export const DELETE_FOOD_ITEM_URL = RESTAURANT_URL + '/deleteFoodItem/';
 //-----Messages
 export const ADD_MESSAGE_URL = RESTAURANT_URL + '/addMessage';
 export const GET_MESSAGES_URL = RESTAURANT_URL + '/getMessages';

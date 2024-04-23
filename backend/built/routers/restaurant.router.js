@@ -44,7 +44,39 @@ var express_async_handler_1 = __importDefault(require("express-async-handler"));
 var contactUs_model_1 = require("../models/contactUs.model");
 var review_model_1 = require("../models/review.model");
 var emailNewsletter_model_1 = require("../models/emailNewsletter.model");
+var food_model_1 = require("../models/food.model");
 var router = (0, express_1.Router)();
+// router.post(
+//   "/addFoodItem",
+//   expressAsyncHandler(async (req, res) => {
+//     const { name, price, imageUrl } = req.body;
+//     const newFoodItem = new FoodModel({ name, price, imageUrl });
+//     await newFoodItem.save();
+//     res.send(newFoodItem);
+//   })
+// );
+var multer = require("multer");
+var path = require("path");
+var storage = multer.diskStorage({
+    destination: "./uploads/",
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
+    },
+});
+var upload = multer({ storage: storage });
+router.post("/addFoodItem", upload.single("imageUrl"), function (req, res) {
+    var imageUrl = req.file ? req.file.path : "";
+    // let file = (req as any).files.imageUrl;
+    var _a = req.body, name = _a.name, price = _a.price;
+    try {
+        var newFoodItem = new food_model_1.FoodModel({ name: name, price: price, imageUrl: imageUrl });
+        newFoodItem.save();
+        res.send(newFoodItem);
+    }
+    catch (err) {
+        res.status(500).send(err);
+    }
+});
 router.post("/addMessage", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name, email, message, addMessage;
     return __generator(this, function (_b) {

@@ -14,6 +14,7 @@ var database_config_1 = require("./configs/database.config");
 var order_router_1 = __importDefault(require("./routers/order.router"));
 var restaurant_router_1 = __importDefault(require("./routers/restaurant.router"));
 var path_1 = __importDefault(require("path"));
+var multer = require("multer");
 (0, database_config_1.dbConnect)();
 var app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -32,7 +33,6 @@ app.use("/api/restaurant", restaurant_router_1.default);
 app.use(express_1.default.static("public/browser"));
 app.get("*", function (req, res) {
     var htmlfile = path_1.default.join(__dirname, "public", "browser", "index.html");
-    console.log({ htmlfile: htmlfile });
     res.sendFile(htmlfile);
 });
 var port = process.env.PORT || 5000;

@@ -9,6 +9,9 @@ import { SearchBarComponent } from '../../partials/search-bar/search-bar.compone
 import { TagsComponent } from '../../partials/tags/tags.component';
 import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 import { Observable } from 'rxjs';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +32,10 @@ import { Observable } from 'rxjs';
 export class HomeComponent {
   foods: Food[] = [];
   constructor(
+    public userService: UserService,
     private foodService: FoodService,
+    private restaurantService: RestaurantService,
+    private toastrService: ToastrService,
     activatedRoute: ActivatedRoute
   ) {
     let foodsObservable: Observable<Food[]>;
@@ -50,4 +56,18 @@ export class HomeComponent {
   }
 
   ngOnInit() {}
+
+  deleteItem(foodId: any) {
+    this.restaurantService.deleteFoodItem(foodId).subscribe({
+      next: () => {
+        this.toastrService.success('Item deleted');
+        this.foodService.getAll().subscribe((serverFoods) => {
+          this.foods = serverFoods;
+        });
+      },
+      error: (error) => {
+        this.toastrService.error(error.error, 'Cart');
+      },
+    });
+  }
 }

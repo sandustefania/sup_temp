@@ -7,10 +7,10 @@ exports.FoodSchema = new mongoose_1.Schema({
     price: { type: Number, required: true },
     tags: { type: [String] },
     favorite: { type: Boolean, default: false },
-    stars: { type: Number, required: true },
+    stars: { type: Number },
     imageUrl: { type: String, required: true },
-    origins: { type: [String], required: true },
-    cookTime: { type: String, required: true },
+    origins: { type: [String] },
+    cookTime: { type: String },
 }, {
     toJSON: {
         virtuals: true,
