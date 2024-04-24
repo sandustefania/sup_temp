@@ -34,6 +34,6 @@ export class FoodDetailsComponent {
 
   addToCart() {
     this.cartService.addToCart(this.foodDetails);
-    this.router.navigateByUrl('/cart-page');
+    this.router.navigateByUrl('/checkout');
   }
 }

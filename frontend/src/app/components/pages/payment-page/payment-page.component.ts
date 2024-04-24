@@ -4,7 +4,6 @@ import { Order } from '../../../shared/models/Order';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TitleComponent } from '../../partials/title/title.component';
-import { MapComponent } from '../../partials/map/map.component';
 import { OrderItemsListComponent } from '../../partials/order-items-list/order-items-list.component';
 import { PaypalButtonComponent } from '../../partials/paypal-button/paypal-button.component';
 
@@ -14,7 +13,6 @@ import { PaypalButtonComponent } from '../../partials/paypal-button/paypal-butto
   imports: [
     CommonModule,
     TitleComponent,
-    MapComponent,
     OrderItemsListComponent,
     PaypalButtonComponent,
   ],

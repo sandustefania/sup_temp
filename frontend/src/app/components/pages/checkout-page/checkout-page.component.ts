@@ -11,11 +11,11 @@ import { UserService } from '../../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { TitleComponent } from '../../partials/title/title.component';
 import { OrderItemsListComponent } from '../../partials/order-items-list/order-items-list.component';
-import { MapComponent } from '../../partials/map/map.component';
 import { Router } from '@angular/router';
 import { OrderService } from '../../../services/order.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PaypalButtonComponent } from '../../partials/paypal-button/paypal-button.component';
 
 @Component({
   selector: 'app-checkout-page',
@@ -24,9 +24,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     TitleComponent,
     ReactiveFormsModule,
     OrderItemsListComponent,
-    MapComponent,
     MatInputModule,
     MatFormFieldModule,
+    PaypalButtonComponent,
   ],
   templateUrl: './checkout-page.component.html',
   styleUrl: './checkout-page.component.scss',
@@ -54,6 +54,7 @@ export class CheckoutPageComponent {
       name: [name, Validators.required],
       address: [address, Validators.required],
     });
+    this.createOrder();
   }
 
   get fc() {
@@ -65,18 +66,17 @@ export class CheckoutPageComponent {
       this.toastrService.warning('Please fill the inputs', 'Invalid Inputs');
       return;
     }
-    if (!this.order.addressLatLng) {
-      this.toastrService.warning(
-        'Please Select your location on the map',
-        'Location'
-      );
-      return;
-    }
 
     this.order.name = this.fc.name.value;
     this.order.address = this.fc.address.value;
     this.orderService.create(this.order).subscribe({
-      next: () => this.router.navigateByUrl('/payment'),
+      next: () => {
+        console.log('IT WORKED'),
+          //credentials to pay
+          console.log(
+            'email: sb-q47ynv29154651@personal.example.com, password: X!Ab4y$<'
+          );
+      },
       error: (error) => {
         this.toastrService.error(error.error, 'Cart');
       },

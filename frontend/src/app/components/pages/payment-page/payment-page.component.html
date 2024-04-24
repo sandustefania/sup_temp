@@ -16,14 +16,4 @@
     </div>
     <order-items-list [order]="newOrder"></order-items-list>
   </div>
-  <div class="map">
-    <app-title title="Shipping address" fontSize="1.6rem"></app-title>
-    <app-map [order]="newOrder" [readonly]="true"></app-map>
-  </div>
-
-  <div class="buttons-container">
-    <div class="buttons">
-      <app-paypal-button [order]="newOrder"></app-paypal-button>
-    </div>
-  </div>
 </div>

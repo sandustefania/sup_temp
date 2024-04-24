@@ -3,16 +3,6 @@ import { Food } from "./food.model";
 import { FoodSchema } from "./food.model";
 import { OrderStatusEnum } from "../constants/order_status";
 
-export interface LatLng {
-  lat: string;
-  lng: string;
-}
-
-export const LatLngSchema = new Schema<LatLng>({
-  lat: { type: String, required: true },
-  lng: { type: String, required: true },
-});
-
 export interface OrderItem {
   food: Food;
   price: number;
@@ -31,7 +21,6 @@ export interface Order {
   totalPrice: number;
   name: string;
   address: string;
-  addressLatLng?: LatLng;
   paymentId: string;
   status: OrderStatusEnum;
   user: Types.ObjectId; //foreign key, for just the id
@@ -43,7 +32,6 @@ const orderSchema = new Schema<Order>(
   {
     name: { type: String, required: true },
     address: { type: String, required: true },
-    addressLatLng: { type: LatLngSchema, required: true },
     paymentId: { type: String },
     totalPrice: { type: Number, required: true },
     items: { type: [OrderItemSchema], required: true },
