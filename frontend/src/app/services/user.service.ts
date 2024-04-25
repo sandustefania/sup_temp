@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
+import { CartService } from './cart.service';
+import { Cart } from '../shared/models/Cart';
 
 const USER_KEY = 'User';
 
@@ -18,7 +20,11 @@ export class UserService {
   );
   public userObservable: Observable<User>;
 
-  constructor(private http: HttpClient, private toastrService: ToastrService) {
+  constructor(
+    private http: HttpClient,
+    private toastrService: ToastrService,
+    private cartService: CartService
+  ) {
     this.userObservable = this.userSubject.asObservable();
   }
 
@@ -65,6 +71,7 @@ export class UserService {
   logout() {
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
+    localStorage.removeItem('Cart');
     window.location.reload();
   }
 

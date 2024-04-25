@@ -6,7 +6,6 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { authGuard } from './auth/guards/auth.guard';
-import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { ContactUsPageComponent } from './components/pages/contact-us-page/contact-us-page.component';
 import { isAdminGuard } from './auth/guards/isAdmin.guard';
@@ -36,11 +35,6 @@ export const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutPageComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'payment',
-    component: PaymentPageComponent,
     canActivate: [authGuard],
   },
   {

@@ -1,12 +1,36 @@
 <div class="main-container">
   <h1>RENT A SUP!</h1>
-  <h2>Sups Available : {{ numberSupsAvailable }}</h2>
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar
-      [(selected)]="selectedDate"
-      [minDate]="minDate"
-      (selectedChange)="select($event)"
-    ></mat-calendar>
-  </mat-card>
-  <p>Selected date: {{ selectedDate | date }}</p>
+  <h2>Sups fleet Available : {{ numberSupsAvailable }}</h2>
+
+  <h2>How many SUPs do you want?</h2>
+  <form [formGroup]="rentSupsForm" (ngSubmit)="submit()">
+    <!------------ NUMBER OF SUPS -->
+    <mat-form-field>
+      <mat-label>Number of sups</mat-label>
+      <mat-select formControlName="numberSups">
+        <mat-option value="1">1 Sup</mat-option>
+        <mat-option value="2">2 Sups</mat-option>
+        <mat-option value="3">3 Sups</mat-option>
+        <mat-option value="4">4 Sups</mat-option>
+        <mat-option value="5">5 Sups</mat-option>
+        <mat-option value="6">6 Sups</mat-option>
+        <mat-option value="7">7 Sups</mat-option>
+        <mat-option value="8">8 Sups</mat-option>
+        <mat-option value="9">9 Sups</mat-option>
+        <mat-option value="10">10 Sups</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <p>You selected:</p>
+    <!---------------- CALENDAR -->
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar
+        [(selected)]="rentSupsForm.value.selectedDate"
+        [minDate]="minDate"
+        (selectedChange)="select($event)"
+      ></mat-calendar>
+    </mat-card>
+    <p>Selected date: {{ rentSupsForm.value.selectedDate | date }}</p>
+    <button (click)="submit()">Submit</button>
+  </form>
 </div>
