@@ -40,8 +40,8 @@ export class RentSupComponent {
 
   ngOnInit() {
     this.rentSupsForm = this.formBuilder.group({
-      numberSups: ['', [Validators.required]],
-      selectedDate: ['', [Validators.required]],
+      numberSups: ['1', [Validators.required]],
+      selectedDate: [this.minDate, [Validators.required]],
     });
   }
   get fc() {
