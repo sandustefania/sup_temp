@@ -5,17 +5,18 @@ import {
   ADD_EMAIL_NEWSLETTER_URL,
   ADD_FOOD_ITEM_URL,
   ADD_MESSAGE_URL,
+  ADD_RENT_SUPS_URL,
   ADD_REVIEW_URL,
   DELETE_FOOD_ITEM_URL,
   GET_EMAIL_NEWSLETTER_URL,
   GET_MESSAGES_URL,
   GET_REVIEWS_URL,
-  WEATHER,
+  WEATHER_URL,
 } from '../shared/constants/urls';
 import { Observable } from 'rxjs';
 import { IReview } from '../shared/interfaces/IReview';
 import { IEmail } from '../shared/interfaces/IEmail';
-import { Food } from '../shared/models/Food';
+import { IRentSup } from '../shared/interfaces/IRentSup';
 
 @Injectable({
   providedIn: 'root',
@@ -56,6 +57,10 @@ export class RestaurantService {
   }
 
   loadCurrentWeather(): Observable<any> {
-    return this.http.get(WEATHER);
+    return this.http.get(WEATHER_URL);
+  }
+
+  addRentSups(rentSupForm: IRentSup): Observable<any> {
+    return this.http.post<any>(ADD_RENT_SUPS_URL, rentSupForm);
   }
 }

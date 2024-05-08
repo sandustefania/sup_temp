@@ -1,22 +1,72 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    height: 90vh;
-}
+ .main {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 50px;
 
-.details {
-    width: 28rem;
-}
+ }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px;
+ .container {
+     display: flex;
+     width: 60%;
+     height: 60vh;
+     border-radius: 50px;
+     background-color: white;
+     box-shadow: -30px 0px 10px 10px #53A7D1;
+ }
 
-    * {
-        width: 100%;
-    }
-}
+
+ form {
+
+     width: 55%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+     mat-form-field {
+         width: 400px;
+
+     }
+
+     button {
+         width: 200px;
+         background-color: #53A7D1;
+         font-weight: 800;
+     }
+
+     h1 {
+         color: #53A7D1;
+
+     }
+ }
+
+ .inregistrare {
+
+     border-radius: 150px 50px 50px 150px;
+     width: 45%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: #53A7D1;
+
+     h1 {
+         color: white;
+     }
+
+     p {
+         color: white;
+         font-size: 20px;
+         width: 70%;
+         text-align: center;
+
+
+     }
+
+     button {
+         color: white;
+         background-color: #53A7D1;
+         border: 2px solid white;
+     }
+ }

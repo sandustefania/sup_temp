@@ -31,8 +31,8 @@ export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 export const RESTAURANT_URL = BASE_URL + '/api/restaurant';
 //-----Add-Food-Item
 
-export const WEATHER = RESTAURANT_URL + '/weather';
-
+export const WEATHER_URL = RESTAURANT_URL + '/weather';
+//AR TREBUI ADMIN?
 export const ADD_FOOD_ITEM_URL = RESTAURANT_URL + '/addFoodItem';
 export const DELETE_FOOD_ITEM_URL = RESTAURANT_URL + '/deleteFoodItem/';
 //-----Messages
@@ -46,3 +46,6 @@ export const GET_REVIEWS_URL = RESTAURANT_URL + '/getReviews';
 //-----Newsletter
 export const ADD_EMAIL_NEWSLETTER_URL = RESTAURANT_URL + '/addEmailNewsletter';
 export const GET_EMAIL_NEWSLETTER_URL = RESTAURANT_URL + '/getEmailNewsletter';
+
+//--------SUPS
+export const ADD_RENT_SUPS_URL = RESTAURANT_URL + '/addRentSup';

@@ -11,6 +11,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-rent-sup',
@@ -31,8 +33,9 @@ export class RentSupComponent {
 
   minDate: Date;
   constructor(
-    private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private restaurantService: RestaurantService,
+    private toastrService: ToastrService
   ) {
     this.minDate = new Date();
     this.minDate.setHours(0, 0, 0, 0);
@@ -58,5 +61,17 @@ export class RentSupComponent {
 
   submit() {
     console.log(this.rentSupsForm.value);
+    this.restaurantService
+      .addRentSups({
+        numberSups: this.fc.numberSups.value,
+        selectedDate: this.fc.selectedDate.value,
+      })
+      .subscribe({
+        next: () => {},
+        error: (error) => {
+          console.log('SUP FAILED', error);
+          this.toastrService.error('SUP FAILED:', error);
+        },
+      });
   }
 }

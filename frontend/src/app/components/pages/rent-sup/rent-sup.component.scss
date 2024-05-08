@@ -4,7 +4,12 @@
     align-items: center;
 }
 
-.demo-inline-calendar-card {
-    width: 300px;
-    background-color: rgb(233, 250, 255);
+::ng-deep .demo-inline-calendar-card {
+    background-color: var(--light-blue);
+    font-size: 16px;
+}
+
+::ng-deep .mat-datepicker-content .mat-calendar .mat-calendar-content .mat-input-element {
+    font-size: 16px;
+    /* Adjust the font size as needed */
 }

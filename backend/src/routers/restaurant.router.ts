@@ -7,6 +7,8 @@ import multer from "multer";
 import path from "path";
 import { FoodModel } from "../models/food.model";
 import axios from "axios";
+import { RentSupModel } from "../models/rentSups.model";
+import { HTTP_BAD_REQUEST } from "../constants/http_status";
 
 const router = Router();
 
@@ -108,6 +110,30 @@ router.get(
   expressAsyncHandler(async (req, res) => {
     const emails = await EmailNewsletterModel.find();
     res.send(emails);
+  })
+);
+
+router.post(
+  "/addRentSup",
+  expressAsyncHandler(async (req, res) => {
+    const { numberSups, selectedDate } = req.body;
+
+    const day = await RentSupModel.findOne({ selectedDate: selectedDate });
+    if (day) {
+      if (parseInt(day?.numberSups) + parseInt(numberSups) < 10) {
+        const addRentSup = new RentSupModel({ numberSups, selectedDate });
+        await addRentSup.save();
+        res.send(addRentSup);
+      } else {
+        res.status(HTTP_BAD_REQUEST).send("!!!NO MORE SUPS AVAILABLE!!!!");
+        return;
+      }
+
+      // POSIBIL sa compare secundele, vrem doar shortDATE
+      //posibil sa vrem findMANY, ca sa fie mai multe sup-uri in aceeasi data
+    } else {
+      res.status(HTTP_BAD_REQUEST).send("idk?");
+    }
   })
 );
 

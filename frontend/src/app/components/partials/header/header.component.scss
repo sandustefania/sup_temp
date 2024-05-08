@@ -2,18 +2,18 @@ header {
     position: relative;
     background: white;
     padding: 0;
-    border-bottom: 1px solid var(--red);
+    border-bottom: 1px solid var(--dark-blue);
     position: sticky;
     top: 0px;
     z-index: 99;
 }
 
 a {
-    color: var(--red);
+    color: var(--dark-blue);
 }
 
 a:hover {
-    background: var(--red);
+    background: var(--dark-blue);
     color: white;
 }
 
@@ -40,7 +40,7 @@ ul {
         display: inline-block;
 
         span {
-            background-color: var(--red);
+            background-color: var(--dark-blue);
             color: white;
             padding: 0.1rem 0.45rem;
             border-radius: 100rem;
