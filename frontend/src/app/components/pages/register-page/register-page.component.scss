@@ -16,29 +16,6 @@
 
 }
 
-form {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    mat-form-field {
-        width: 400px;
-
-    }
-
-    button {
-        width: 200px;
-        background-color: var(--orange);
-        font-weight: 800;
-    }
-
-    h1 {
-        color: #53A7D1;
-
-    }
-}
 
 .left-side {
 
@@ -67,5 +44,30 @@ form {
         color: white;
         background-color: var(--light-blue);
         border: 2px solid white;
+    }
+}
+
+
+form {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    mat-form-field {
+        width: 400px;
+
+    }
+
+    button {
+        width: 200px;
+        background-color: var(--orange);
+        font-weight: 800;
+    }
+
+    h1 {
+        color: #53A7D1;
+
     }
 }
