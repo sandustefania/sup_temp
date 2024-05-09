@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RestaurantService } from '../../../services/restaurant.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { IEmail } from '../../../shared/interfaces/IEmail';
 
 @Component({
   selector: 'app-footer',

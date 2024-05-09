@@ -1,87 +1,115 @@
-<div class="container">
-  <form [formGroup]="registerForm" (ngSubmit)="submit()">
-    <app-title title="Register"></app-title>
-    <div class="input-container">
-      <mat-form-field>
-        <mat-label for="name">Name</mat-label>
-        <input type="text" matInput formControlName="name" />
-
-        <mat-error *ngIf="fc.name.errors?.required"
-          >Should not be empty</mat-error
-        >
-      </mat-form-field>
-    </div>
-    <div class="input-container">
-      <mat-form-field>
-        <mat-label for="email">Email</mat-label>
-        <input type="email" matInput formControlName="email" />
-        <mat-error *ngIf="fc.email.errors?.required"
-          >Should not be empty</mat-error
-        >
-        <mat-error *ngIf="fc.email.errors?.email"
-          >Email is not correct</mat-error
-        >
-      </mat-form-field>
-    </div>
-    <div class="input-container">
-      <mat-form-field>
-        <mat-label for="password">Password</mat-label>
-        <input
-          matInput
-          type="password"
-          placeholder="Password"
-          formControlName="password"
-        />
-        <mat-error *ngIf="fc.password.errors?.required"
-          >Should not be empty</mat-error
-        >
-        <mat-error *ngIf="fc.password.errors?.minlength">
-          Minimum 5 characters!
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="input-container">
-      <mat-form-field>
-        <mat-label for="confirmPassword">Confirm Password</mat-label>
-
-        <input
-          matInput
-          type="password"
-          placeholder="Confirm password"
-          formControlName="confirmPassword"
-        />
-        <mat-error *ngIf="fc.confirmPassword.errors"
-          >Passwords should match!</mat-error
-        >
-      </mat-form-field>
-    </div>
-    <div class="input-container">
-      <mat-form-field>
-        <mat-label for="address">Address</mat-label>
-        <input
-          matInput
-          type="text"
-          placeholder="Address"
-          formControlName="address"
-        />
-        <mat-error *ngIf="fc.address.errors?.required"
-          >Should not be empty</mat-error
-        >
-        <mat-error *ngIf="fc.address.errors?.minlength">
-          Minimum 5 characters!
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="button">
-      <button mat-raised-button color="primary" type="submit">Register</button>
-    </div>
-    <br />
-    <div class="login">
-      Already a user? &nbsp;
-      <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
-        Login Here</a
+<div class="main">
+  <div class="container">
+    <div class="left-side">
+      <h1>BINE AI VENIT!</h1>
+      <svg
+        width="115"
+        height="17"
+        viewBox="0 0 115 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
+        <path
+          d="M2.0287 8.99292C1.98912 0.0310419 14.3711 0.545092 14.3594 8.97986C14.3476 17.4146 26.6818 14.7795 26.6899 8.96692C26.7007 1.28189 38.537 2.01906 38.5272 9.0178C38.5175 16.0165 51.342 15.503 51.3511 9.00422C51.3623 0.944143 65.1703 2.49013 65.1613 8.98927C65.1522 15.4884 76.991 14.7257 76.9991 8.9135C77.0072 3.10133 89.3395 1.90167 89.3298 8.90043C89.32 15.8992 101.889 17.0106 101.66 8.88734C101.432 0.764045 112.523 0.377386 112.511 8.87587"
+          stroke="#F59134"
+          stroke-width="3"
+        />
+      </svg>
+      <p>
+        Introdu datele personale pentru a putea participa la evenimente si
+        inchiria echipamente sportive.
+      </p>
+      <a routerLink="/login">
+        <button mat-raised-button color="primary">CONECTARE</button>
+      </a>
     </div>
-  </form>
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <h1>CREARE CONT</h1>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="name">Nume</mat-label>
+          <input type="text" matInput formControlName="name" />
+
+          <mat-error *ngIf="fc.name.errors?.required"
+            >Should not be empty</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="email">Email</mat-label>
+          <input type="email" matInput formControlName="email" />
+          <mat-error *ngIf="fc.email.errors?.required"
+            >Should not be empty</mat-error
+          >
+          <mat-error *ngIf="fc.email.errors?.email"
+            >Email is not correct</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="phone">Telefon</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Phone"
+            formControlName="phone"
+          />
+          <mat-error *ngIf="fc.phone.errors?.required"
+            >Should not be empty</mat-error
+          >
+          <mat-error *ngIf="fc.phone.errors?.minlength">
+            Minimum 10 cifre
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="password">Parola</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="fc.password.errors?.required"
+            >Should not be empty</mat-error
+          >
+          <mat-error *ngIf="fc.password.errors?.minlength">
+            Minimum 5 characters!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="confirmPassword">Confirmare Parola</mat-label>
+
+          <input
+            matInput
+            type="password"
+            placeholder="Confirm password"
+            formControlName="confirmPassword"
+          />
+          <mat-error *ngIf="fc.confirmPassword.errors"
+            >Passwords should match!</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit">
+          INREGISTRARE
+        </button>
+      </div>
+      <br />
+      <!-- <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here</a
+        >
+      </div> -->
+    </form>
+  </div>
 </div>

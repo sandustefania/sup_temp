@@ -9,10 +9,10 @@
  .container {
      display: flex;
      width: 60%;
-     height: 60vh;
+     height: 80vh;
      border-radius: 50px;
      background-color: white;
-     box-shadow: -30px 0px 10px 10px #53A7D1;
+     box-shadow: -2px 0px 10px 0px #53A7D1;
  }
 
 
@@ -31,7 +31,7 @@
 
      button {
          width: 200px;
-         background-color: #53A7D1;
+         background-color: var(--orange);
          font-weight: 800;
      }
 
@@ -41,9 +41,9 @@
      }
  }
 
- .inregistrare {
+ .right-side {
 
-     border-radius: 150px 50px 50px 150px;
+     border-radius: 120px 50px 50px 120px;
      width: 45%;
      display: flex;
      flex-direction: column;

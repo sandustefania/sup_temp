@@ -47,9 +47,9 @@ export class RegisterPageComponent {
       {
         name: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required, Validators.minLength(10)]],
         password: ['', [Validators.required, Validators.minLength(5)]],
         confirmPassword: ['', Validators.required],
-        address: ['', [Validators.required, Validators.minLength(5)]],
       },
       {
         validators: PasswordsMatchValidator('password', 'confirmPassword'),
@@ -69,9 +69,9 @@ export class RegisterPageComponent {
     const user: IUserRegister = {
       name: fv.name,
       email: fv.email,
+      phone: fv.phone,
       password: fv.password,
       confirmPassword: fv.confirmPassword,
-      address: fv.address,
     };
     this.userService.register(user).subscribe(() => {
       this.router.navigateByUrl(this.returnUrl);

@@ -56,7 +56,7 @@ router.post(
 router.post(
   "/register",
   expressAsyncHandler(async (req, res) => {
-    const { name, email, password, address } = req.body;
+    const { name, email, phone, password } = req.body;
     const user = await UserModel.findOne({ email }); //verificam daca exista deja un user cu acest email
     if (user) {
       // res.status(400)
@@ -70,9 +70,9 @@ router.post(
     const newUser: User = {
       id: "",
       name: name,
+      phone: phone,
       email: email.toLowerCase(),
       password: encryptedPassword,
-      address: address,
       //orice new user e admin
       isAdmin: false,
     };
@@ -97,7 +97,7 @@ const generateTokenResponse = (user: any) => {
     id: user.id,
     email: user.email,
     name: user.name,
-    address: user.address,
+    phone: user.phone,
     isAdmin: user.isAdmin,
     token: token,
   };
