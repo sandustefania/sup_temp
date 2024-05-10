@@ -4,7 +4,7 @@
     <div class="details">
       <div><strong> Date </strong> {{ order.createdAt | date }}</div>
       <div><strong> Name </strong> {{ order.name }}</div>
-      <div><strong> Address </strong> {{ order.address }}</div>
+      <div><strong> Phone </strong> {{ order.phone }}</div>
       <div><strong> Status </strong> {{ order.status }}</div>
       <div *ngIf="order.paymentId">
         <strong>Payment ID</strong> {{ order.paymentId }}

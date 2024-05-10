@@ -1,9 +1,17 @@
+h1 {
+    color: var(--orange);
+    text-align: center;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 3rem;
+
+
+
 
 }
 
@@ -12,7 +20,7 @@
     max-width: 40rem;
 }
 
-img {
+.item-image {
     border-radius: 3rem;
     flex: 1 0;
     object-fit: cover;
@@ -30,6 +38,33 @@ img {
     padding: 2rem;
     color: black;
 
+    .item-details {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 15px;
+        }
+
+    }
+
+    button {
+        background-color: var(--light-blue);
+        font-size: 40px;
+        width: 50%;
+        margin-top: 20px;
+        padding: 5px 0;
+        color: white;
+        border: 2px solid var(--dark-blue);
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px var(--light-blue);
+
+        &:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+    }
 }
 
 .header {
@@ -42,38 +77,13 @@ img {
     font-weight: bold;
 }
 
-.favorite.not {
-    display: none;
-}
 
-.origins {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem 0;
-}
 
-.origins span {
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    margin: 0.5rem 0.5rem 0.5rem 0;
-    border-radius: 2rem;
-    background-color: aliceblue;
-}
-
-.rating {
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 15px;
-
-}
-
-//tags
-
-.cook-time {
+.nr-locuri {
     margin-top: 1rem;
 }
 
-.cook-time span {
+.nr-locuri span {
     padding: 0.6rem 2rem 0.6rem 0;
     border-radius: 10rem;
     font-size: 1.3rem;
@@ -89,19 +99,4 @@ img {
 .price::before {
     content: 'Price: ';
     color: darkgray
-}
-
-button {
-    color: white;
-    background: var(--dark-blue);
-    border: none;
-    font-size: 1.2rem;
-    padding: 1rem;
-    border-radius: 10rem;
-    outline: none;
-}
-
-button:hover {
-    opacity: 0.9;
-    cursor: pointer;
 }

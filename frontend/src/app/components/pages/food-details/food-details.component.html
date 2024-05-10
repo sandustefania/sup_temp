@@ -3,43 +3,72 @@
   notFoundMessage="Food Not Found!"
   resetLinkText="Back to Homepage"
 ></app-not-found>
-
+<h1>EVENIMENT</h1>
 <div *ngIf="foodDetails" class="container">
-  <img [src]="foodDetails.imageUrl" [alt]="foodDetails.name" />
+  <img
+    [src]="foodDetails.imageUrl"
+    [alt]="foodDetails.name"
+    class="item-image"
+  />
   <div class="details">
     <div class="header">
       <span class="name">{{ foodDetails.name }}</span>
-      <span class="favorite {{ foodDetails.favorite ? '' : 'not' }}">❤️</span>
     </div>
 
-    <div class="rating">
-      <star-rating
-        [starType]="'svg'"
-        [rating]="foodDetails.stars"
-        [readOnly]="true"
-      ></star-rating>
+    <div class="item-details">
+      <img
+        src="assets/images/svg/map-pin.png"
+        alt="clock"
+        width="31px"
+        height="31px"
+      />
+      <p>Locatie: {{ foodDetails.locatie }}</p>
+    </div>
+    <div class="item-details">
+      <img
+        src="assets/images/svg/date.png"
+        alt="clock"
+        width="31px"
+        height="31px"
+      />
+      <p>Data: {{ foodDetails.data }}</p>
     </div>
 
-    <div class="origins">
-      <span *ngFor="let origin of foodDetails.origins">{{ origin }}</span>
+    <div class="item-details">
+      <img
+        src="assets/images/svg/clock.png"
+        alt="clock"
+        width="31px"
+        height="31px"
+      />
+      <p>Ora: {{ foodDetails.ora }}</p>
     </div>
-    <div class="tags">
+    <div class="item-details">
+      <img
+        src="assets/images/svg/nr-locuri.png"
+        alt="clock"
+        width="31px"
+        height="31px"
+      />
+      <p>Numar de locuri: {{ foodDetails.nrLocuri }} persoane</p>
+    </div>
+
+    <div class="item-details">
+      <img
+        src="assets/images/svg/price.png"
+        alt="clock"
+        width="31px"
+        height="31px"
+      />
+      <p>Pret/persoana: {{ foodDetails.price | currency }}</p>
+    </div>
+
+    <!-- <div class="tags">
       <a *ngFor="let tag of foodDetails.tags" routerLink="/tag/{{ tag }}"
         >{{ tag }}
       </a>
-    </div>
+    </div> -->
 
-    <div class="cook-time">
-      <span
-        >Time to cook about
-        <strong>{{ foodDetails.cookTime }}</strong> minutes</span
-      >
-    </div>
-
-    <div class="price">
-      <span>{{ foodDetails.price | currency }}</span>
-    </div>
-
-    <button (click)="addToCart()">Add To Cart</button>
+    <button (click)="addToCart()">REZERVA ACUM!</button>
   </div>
 </div>

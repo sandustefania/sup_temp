@@ -5,7 +5,7 @@ export class Order {
   items!: CartItem[];
   totalPrice!: number;
   name!: string;
-  address!: string;
+  phone!: string;
   paymentId!: string;
   createdAt!: string;
   status!: string;

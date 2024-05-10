@@ -42,17 +42,6 @@ li a {
 
 }
 
-.favorite {
-    position: absolute;
-    top: 0.1rem;
-    right: 1rem;
-    font-size: 1.2rem;
-
-}
-
-.favorite.not {
-    display: none;
-}
 
 .product-item-footer {
     display: flex;
@@ -60,32 +49,11 @@ li a {
     align-items: flex-start;
 }
 
-.origins {
-    flex: 9;
-
-    span {
-        border-radius: 2rem;
-        background-color: whitesmoke;
-        display: inline-block;
-        font-size: 0.8rem;
-        color: gray;
-        margin-right: 0.3rem;
-        padding: 0 0.5rem;
-        margin-top: 0.2rem;
-    }
-}
 
 .cook-time {
     font-size: 0.9rem;
     flex: 3;
     text-align: right;
-}
-
-.stars {
-    display: flex;
-    align-items: flex-start;
-    padding: 5px 0;
-
 }
 
 .price {
