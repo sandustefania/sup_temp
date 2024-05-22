@@ -1,0 +1,78 @@
+.container {}
+
+.despre-noi {
+    position: relative;
+
+    .background-img {
+        width: 100%;
+        position: relative;
+        top: -108px;
+    }
+
+    .despre-noi-img {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        z-index: 9;
+    }
+}
+
+.poveste {
+    position: relative;
+
+    .background-img {
+        width: 100%;
+        position: relative;
+        top: -280px;
+
+    }
+
+    .poveste-text {
+        color: white;
+        position: absolute;
+        top: 0px;
+
+        display: flex;
+        padding: 0 250px;
+
+        p {
+            width: 95%;
+            font-size: 24px;
+        }
+
+        h2 {
+            font-weight: 800;
+        }
+
+    }
+
+}
+
+.echipa {
+    position: relative;
+    top: -250px;
+    width: 60%;
+    margin: 0 auto;
+
+    .membru {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+            text-align: center;
+            flex: 50%;
+        }
+
+        h2 {
+            color: var(--orange);
+            font-weight: 800;
+            border-bottom: 3px solid var(--orange);
+            width: max-content;
+            margin: 0 auto;
+            padding: 10px 50px;
+        }
+    }
+
+
+}

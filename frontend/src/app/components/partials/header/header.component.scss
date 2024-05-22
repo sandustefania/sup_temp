@@ -1,71 +1,85 @@
 header {
     position: relative;
-    background: white;
+    background: transparent;
     padding: 0;
-    border-bottom: 1px solid var(--dark-blue);
     position: sticky;
     top: 0px;
     z-index: 99;
-}
-
-a {
-    color: var(--dark-blue);
-}
-
-a:hover {
-    background: var(--dark-blue);
-    color: white;
-}
-
-.container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-
-
-}
-
-a.logo {
-    font-weight: bold;
-    padding: 1rem;
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
 
     a {
-        padding: 1rem;
-        display: inline-block;
+        color: var(--dark-blue);
 
-        span {
-            background-color: var(--dark-blue);
+        &:hover {
+            background: var(--dark-blue);
             color: white;
-            padding: 0.1rem 0.45rem;
-            border-radius: 100rem;
-            font-size: 0.9rem;
         }
     }
 }
 
-.menu-container {
-    position: relative;
-
+.underline {
+    // border-top: 20px solid red;
+    border-top-left-radius: 10px;
+    border-bottom: 15px solid var(--dark-blue);
+    border-bottom-left-radius: 10px;
 }
 
-.menu {
-    position: absolute;
-    z-index: 1;
-    background-color: whitesmoke;
-    display: none;
-}
+.container {
 
-.menu-container:hover .menu {
-    display: block;
-}
+    display: flex;
+    justify-content: space-between;
 
-.menu a {
-    width: 100%;
-    min-width: 8rem;
+    a.logo {
+        font-weight: bold;
+
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        // border-bottom: 10px solid var(--dark-blue);
+        // border-bottom-left-radius: 10px;
+        padding: 0;
+        margin: 0;
+
+
+
+        a {
+            padding: 0.8rem 2rem;
+            display: inline-block;
+            font-weight: 400;
+            font-family: "Jomhuria", serif;
+            font-size: 32px;
+            border-radius: 0 0 20px 20px;
+
+            span {
+                background-color: var(--dark-blue);
+                color: white;
+                padding: 0.1rem 0.45rem;
+                border-radius: 100rem;
+            }
+        }
+    }
+
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-container:hover .menu {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        z-index: 1;
+        background-color: whitesmoke;
+        display: none;
+
+        // a {
+        //     width: 100%;
+        //     min-width: 8rem;
+        // }
+    }
+
+
+
 }

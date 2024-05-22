@@ -10,18 +10,19 @@
             >Admin page</a
           >
         </li>
-        <li><a routerLink="/contact-us">Contact Us</a></li>
-        <li><a routerLink="/rent-sup">Rent SUP!</a></li>
-        <li><a routerLink="/reviews">Reviews</a></li>
-        <li><a routerLink="/locations">Locations</a></li>
+        <li><a routerLink="/contact-us">CONTACT</a></li>
+        <li><a routerLink="/rent-sup">RENT SUP!</a></li>
+        <li><a routerLink="/reviews">REVIEWS</a></li>
+        <li><a routerLink="/locations">LOCATII</a></li>
+        <li><a routerLink="/despre-noi">DESPRE NOI</a></li>
         <li *ngIf="!isAuth">
-          <a routerLink="/login">Login</a>
+          <a routerLink="/login">LOGIN</a>
         </li>
         <li *ngIf="isAuth" class="menu-container">
           <a routerLink="/dashboard">{{ user.name }}</a>
           <div class="menu">
-            <!-- <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a> -->
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>
@@ -31,6 +32,7 @@
           >
         </li>
       </ul>
+      <div class="underline"></div>
     </nav>
   </div>
 </header>

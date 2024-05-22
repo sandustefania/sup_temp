@@ -12,6 +12,7 @@ import { isAdminGuard } from './auth/guards/isAdmin.guard';
 import { ReviewsPageComponent } from './components/pages/add-review-page/reviews-page.component';
 import { RentSupComponent } from './components/pages/rent-sup/rent-sup.component';
 import { LocationsComponent } from './components/pages/locations/locations.component';
+import { DespreNoiComponent } from './components/pages/despre-noi/despre-noi.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'reviews', component: ReviewsPageComponent },
   { path: 'rent-sup', component: RentSupComponent },
   { path: 'locations', component: LocationsComponent },
+  { path: 'despre-noi', component: DespreNoiComponent },
 
   {
     path: 'admin-page',
