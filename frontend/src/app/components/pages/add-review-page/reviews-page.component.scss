@@ -5,9 +5,11 @@
     background-color: #fafafa;
     margin-bottom: 5rem;
 
+
     form {
         display: flex;
         flex-direction: column;
+
         padding: 3rem 0 0 8rem;
         flex: 0 1 40%;
 
@@ -20,7 +22,6 @@
     .view-reviews-container {
         flex: 0 1 60%;
 
-
     }
 }
 
@@ -28,6 +29,7 @@
     display: flex;
     flex-direction: column;
     background-color: white !important;
+
     margin-top: 3rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -46,8 +48,4 @@
 
 }
 
-.main-container {
-    display: flex;
-
-
-}
+.main-container {}

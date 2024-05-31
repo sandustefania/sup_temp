@@ -11,7 +11,7 @@
 
     .despre-noi-img {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 30%;
         z-index: 9;
     }
@@ -30,7 +30,7 @@
     .poveste-text {
         color: white;
         position: absolute;
-        top: 0px;
+        top: -150px;
 
         display: flex;
         padding: 0 250px;
@@ -75,4 +75,23 @@
     }
 
 
+}
+
+.echipament {
+    display: flex;
+    // padding: 50px;
+    justify-content: center;
+    padding: 100px;
+
+    img {
+        margin-right: 10%;
+    }
+
+    .echipament-text {
+        display: flex;
+        flex-direction: column;
+        // text-align: center;
+        width: 30%;
+
+    }
 }

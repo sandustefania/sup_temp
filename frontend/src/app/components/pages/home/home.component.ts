@@ -2,7 +2,12 @@ import { Component, NgModule } from '@angular/core';
 import { FoodService } from '../../../services/food.service';
 import { Food } from '../../../shared/models/Food';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  RouterLink,
+  RouterModule,
+} from '@angular/router';
 import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from '../../partials/search-bar/search-bar.component';
@@ -24,6 +29,7 @@ import { UserService } from '../../../services/user.service';
     SearchBarComponent,
     TagsComponent,
     NotFoundComponent,
+    RouterModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -36,7 +42,8 @@ export class HomeComponent {
     private foodService: FoodService,
     private restaurantService: RestaurantService,
     private toastrService: ToastrService,
-    activatedRoute: ActivatedRoute
+    activatedRoute: ActivatedRoute,
+    public router: Router
   ) {
     let foodsObservable: Observable<Food[]>;
     activatedRoute.params.subscribe((params) => {

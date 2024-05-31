@@ -13,6 +13,7 @@ import {
 } from '@angular/forms';
 import { RestaurantService } from '../../../services/restaurant.service';
 import { ToastrService } from 'ngx-toastr';
+import { User } from '../../../shared/models/User';
 
 @Component({
   selector: 'app-rent-sup',
@@ -30,12 +31,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RentSupComponent {
   rentSupsForm!: FormGroup;
-
+  currentUser!: User;
   minDate: Date;
   constructor(
     private formBuilder: FormBuilder,
     private restaurantService: RestaurantService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private userService: UserService
   ) {
     this.minDate = new Date();
     this.minDate.setHours(0, 0, 0, 0);
@@ -60,11 +62,15 @@ export class RentSupComponent {
   }
 
   submit() {
+    let { name, email, phone } = this.userService.currentUser;
     console.log(this.rentSupsForm.value);
     this.restaurantService
       .addRentSups({
         numberSups: this.fc.numberSups.value,
         selectedDate: this.fc.selectedDate.value,
+        userName: name,
+        userEmail: email,
+        userPhone: phone,
       })
       .subscribe({
         next: () => {},

@@ -1,33 +1,21 @@
 <div class="container">
   <ul>
-    <li *ngFor="let review of reviews" class="review-container">
-      <div class="">
-        <img
-          src="/assets/images/user.jpg"
-          width="60"
-          height="60"
-          alt="profile"
-        />
-        <div>
-          <p>{{ review.name }}</p>
-          <p class="date">
-            <em>{{ review.createdAt | date }}</em>
-          </p>
-        </div>
-      </div>
+    <li *ngFor="let review of reviews">
+      <img src="/assets/images/photos/me.jpeg" alt="profile" />
+
+      <p>
+        <b>{{ review.name }}</b>
+      </p>
+
+      <p>
+        {{ review.review }}
+      </p>
       <star-rating
         [starType]="'svg'"
         [rating]="review.rating"
         [readOnly]="true"
         class="star-rating"
       ></star-rating>
-      <br />
-
-      <p>
-        <b>{{ review.review }}</b>
-      </p>
-
-      <p>{{ review.rating }} / 5</p>
     </li>
   </ul>
 </div>
