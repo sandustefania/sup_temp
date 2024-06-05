@@ -4,6 +4,7 @@ import { ViewMessagesPageComponent } from '../../components/pages/view-messages-
 import { ViewReviewsPageComponent } from '../../components/pages/view-reviews-page/view-reviews-page.component';
 import { ViewEmailsNewsletterPageComponent } from '../../components/pages/view-emails-newsletter-page/view-emails-newsletter-page.component';
 import { AddFoodItemComponent } from '../../components/pages/add-food-item/add-food-item.component';
+import { ViewRentSupComponent } from '../../components/pages/view-rent-sup/view-rent-sup.component';
 
 export const ADMIN_ROUTES: Route[] = [
   { path: '', component: AdminPageComponent },
@@ -14,4 +15,5 @@ export const ADMIN_ROUTES: Route[] = [
     path: 'view-emails-newsletter',
     component: ViewEmailsNewsletterPageComponent,
   },
+  { path: 'view-rent-sup', component: ViewRentSupComponent },
 ];

@@ -113,28 +113,75 @@ router.get(
   })
 );
 
-router.post(
-  "/addRentSup",
-  expressAsyncHandler(async (req, res) => {
-    const { numberSups, selectedDate } = req.body;
+router.post("/addRentSup", async (req, res) => {
+  const { numberSups, selectedDate, userName, userEmail, userPhone } = req.body;
 
-    const day = await RentSupModel.findOne({ selectedDate: selectedDate });
-    if (day) {
-      if (parseInt(day?.numberSups) + parseInt(numberSups) < 10) {
-        const addRentSup = new RentSupModel({ numberSups, selectedDate });
-        await addRentSup.save();
-        res.send(addRentSup);
+  const convertNumberSups = parseInt(numberSups);
+
+  try {
+    const date = new Date(selectedDate);
+    const existingRecord = await RentSupModel.find({ selectedDate: date });
+    if (existingRecord) {
+      const totalSups = existingRecord.reduce(
+        (total, order) => total + order.numberSups,
+        0
+      );
+      if (totalSups + convertNumberSups > 10) {
+        return res.status(400).send("Total number of sups exceeds 10.");
       } else {
-        res.status(HTTP_BAD_REQUEST).send("!!!NO MORE SUPS AVAILABLE!!!!");
-        return;
+        const newSup = new RentSupModel({
+          numberSups: convertNumberSups,
+          selectedDate: date,
+          userName,
+          userEmail,
+          userPhone,
+        });
+        await newSup.save();
       }
-
-      // POSIBIL sa compare secundele, vrem doar shortDATE
-      //posibil sa vrem findMANY, ca sa fie mai multe sup-uri in aceeasi data
     } else {
-      res.status(HTTP_BAD_REQUEST).send("idk?");
+      const newSup = new RentSupModel({
+        numberSups: convertNumberSups,
+        selectedDate: date,
+        userName,
+        userEmail,
+        userPhone,
+      });
+      await newSup.save();
     }
+
+    res.status(200).json({ message: "Data added successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error", error });
+  }
+});
+
+router.get(
+  "/getRentSup",
+  expressAsyncHandler(async (req, res) => {
+    const rentSups = await RentSupModel.find();
+    res.send(rentSups);
   })
 );
+
+router.get("/getSupsAvailable", async (req, res) => {
+  const { numberSups, selectedDate } = req.body;
+  const convertNumberSups = parseInt(numberSups);
+  const existingRecord = await RentSupModel.find({
+    selectedDate: selectedDate,
+  });
+  if (existingRecord) {
+    const totalSups = existingRecord.reduce(
+      (total, order) => total + order.numberSups,
+      0
+    );
+    if (totalSups >= 10) {
+      return res.status(400).send("No Sups Available");
+    } else {
+      console.log(10 - totalSups);
+      return res.send(10 - totalSups);
+    }
+  }
+  res.send();
+});
 
 export default router;

@@ -14,6 +14,7 @@ import {
 import { RestaurantService } from '../../../services/restaurant.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../../../shared/models/User';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-rent-sup',
@@ -53,31 +54,50 @@ export class RentSupComponent {
     return this.rentSupsForm.controls;
   }
 
-  numberSupsAvailable: number = 10;
+  numberSupsAvailable!: number;
 
-  datePipe = new DatePipe('en-US');
-
-  select(e: any) {
-    const date = this.datePipe.transform(e, 'dd/MM/yyyy');
+  select(event: any) {
+    const selectedDate = event;
+    this.rentSupsForm.controls['selectedDate'].setValue(selectedDate);
   }
 
   submit() {
     let { name, email, phone } = this.userService.currentUser;
-    console.log(this.rentSupsForm.value);
+
+    const formValue = this.rentSupsForm.value;
+    formValue.selectedDate = this.formatDate(formValue.selectedDate);
+    // const dateValue = formValue.selectedDate;
+
     this.restaurantService
       .addRentSups({
         numberSups: this.fc.numberSups.value,
         selectedDate: this.fc.selectedDate.value,
+        // selectedDate: dateValue,
         userName: name,
         userEmail: email,
         userPhone: phone,
       })
       .subscribe({
-        next: () => {},
+        next: () => {
+          this.toastrService.success('SUP RENTED!');
+        },
         error: (error) => {
-          console.log('SUP FAILED', error);
-          this.toastrService.error('SUP FAILED:', error);
+          this.toastrService.error(error.error);
         },
       });
+  }
+
+  formatDate(date: Date): string {
+    // Format the date to YYYY-MM-DD to avoid time zone issues
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    return `${year}-${month}-${day}`;
+  }
+
+  checkSupsAvailable(date: any) {
+    this.restaurantService.getSupsAvailable(date).subscribe((serverNrSup) => {
+      this.numberSupsAvailable = serverNrSup;
+    });
   }
 }

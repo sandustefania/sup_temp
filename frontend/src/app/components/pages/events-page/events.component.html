@@ -1,0 +1,80 @@
+<!-- <app-search-bar></app-search-bar>
+<app-tags></app-tags> -->
+<app-not-found
+  [visible]="!foods || !foods.length"
+  resetLinkText="Reset Search"
+></app-not-found>
+<div class="evenimentele-noastre">
+  <h1>EVENIMENTELE NOASTRE</h1>
+</div>
+<ul>
+  <li *ngFor="let food of foods">
+    <!-- <button
+      *ngIf="userService.currentUser.isAdmin"
+      (click)="deleteItem(food.id)"
+    >
+      Delete item
+    </button> -->
+
+    <a routerLink="/food/{{ food.id }}"
+      ><img [src]="food.imageUrl" [alt]="food.name"
+    /></a>
+
+    <div class="details">
+      <div class="header">
+        <h1 class="name">{{ food.name }}</h1>
+      </div>
+
+      <div class="item-details">
+        <img
+          src="assets/images/svg/map-pin.png"
+          alt="clock"
+          width="31px"
+          height="31px"
+        />
+        <p>Locatie: {{ food.locatie }}</p>
+      </div>
+      <div class="item-details">
+        <img
+          src="assets/images/svg/date.png"
+          alt="clock"
+          width="31px"
+          height="31px"
+        />
+        <p>Data: {{ food.data }}</p>
+      </div>
+
+      <div class="item-details">
+        <img
+          src="assets/images/svg/clock.png"
+          alt="clock"
+          width="31px"
+          height="31px"
+        />
+        <p>Ora: {{ food.ora }}</p>
+      </div>
+      <div class="item-details">
+        <img
+          src="assets/images/svg/nr-locuri.png"
+          alt="clock"
+          width="31px"
+          height="31px"
+        />
+        <p>Numar de locuri: {{ food.nrLocuri }} persoane</p>
+      </div>
+
+      <div class="item-details">
+        <img
+          src="assets/images/svg/price.png"
+          alt="clock"
+          width="31px"
+          height="31px"
+        />
+        <p>Pret/persoana: {{ food.price | currency }}</p>
+      </div>
+      <a routerLink="/food/{{ food.id }}">
+        <button>AFLA DETALII</button>
+      </a>
+    </div>
+  </li>
+</ul>

@@ -1,6 +1,11 @@
 <div class="main-container">
   <h1>RENT A SUP!</h1>
-  <h2>Sups fleet Available : {{ numberSupsAvailable }}</h2>
+  <h2>
+    Sups fleet Available : {{ numberSupsAvailable }}
+    <button (click)="checkSupsAvailable(rentSupsForm.value.selectedDate)">
+      Check
+    </button>
+  </h2>
 
   <h2>How many SUPs do you want?</h2>
   <form [formGroup]="rentSupsForm" (ngSubmit)="submit()">
@@ -31,6 +36,6 @@
       ></mat-calendar>
     </mat-card>
     <p>Selected date: {{ rentSupsForm.value.selectedDate | date }}</p>
-    <button type="submit">Submit</button>
+    <button class="btn-submit" type="submit">Submit</button>
   </form>
 </div>

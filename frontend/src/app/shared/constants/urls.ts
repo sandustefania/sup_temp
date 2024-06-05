@@ -49,3 +49,5 @@ export const GET_EMAIL_NEWSLETTER_URL = RESTAURANT_URL + '/getEmailNewsletter';
 
 //--------SUPS
 export const ADD_RENT_SUPS_URL = RESTAURANT_URL + '/addRentSup';
+export const GET_RENT_SUPS_URL = RESTAURANT_URL + '/getRentSup';
+export const GET_SUPS_AVAILABLE_URL = RESTAURANT_URL + '/getSupsAvailable';

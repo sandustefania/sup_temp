@@ -1,0 +1,25 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let rentSup of rentSups">
+      <!-- <img src="/assets/images/photos/me.jpeg" width="50px" alt="profile" /> -->
+
+      <p>
+        SUPS RENTED:<b> {{ rentSup.numberSups }}</b>
+      </p>
+
+      <p>
+        Date : <b>{{ rentSup.selectedDate | date }}</b>
+      </p>
+
+      <p>
+        Name: <b>{{ rentSup.userName }}</b>
+      </p>
+      <p>
+        Email <b>{{ rentSup.userEmail }}</b>
+      </p>
+      <p>
+        Phone <b>{{ rentSup.userPhone }}</b>
+      </p>
+    </li>
+  </ul>
+</div>

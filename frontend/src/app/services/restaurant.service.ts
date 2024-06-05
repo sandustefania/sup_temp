@@ -10,7 +10,9 @@ import {
   DELETE_FOOD_ITEM_URL,
   GET_EMAIL_NEWSLETTER_URL,
   GET_MESSAGES_URL,
+  GET_RENT_SUPS_URL,
   GET_REVIEWS_URL,
+  GET_SUPS_AVAILABLE_URL,
   WEATHER_URL,
 } from '../shared/constants/urls';
 import { Observable } from 'rxjs';
@@ -62,5 +64,13 @@ export class RestaurantService {
 
   addRentSups(rentSupForm: IRentSup): Observable<any> {
     return this.http.post<any>(ADD_RENT_SUPS_URL, rentSupForm);
+  }
+
+  getRentSup(): Observable<IRentSup[]> {
+    return this.http.get<IRentSup[]>(GET_RENT_SUPS_URL);
+  }
+
+  getSupsAvailable(date: any): Observable<any> {
+    return this.http.get<any>(GET_SUPS_AVAILABLE_URL + date);
   }
 }

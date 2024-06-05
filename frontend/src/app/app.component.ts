@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/partials/header/header.component';
-import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { EventsComponent } from './components/pages/events-page/events.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
     RouterOutlet,
     HeaderComponent,
     HomeComponent,
+    EventsComponent,
     HttpClientModule,
     LoadingComponent,
     FooterComponent,

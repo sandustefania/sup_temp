@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/pages/home/home.component';
 import { FoodDetailsComponent } from './components/pages/food-details/food-details.component';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { LoginComponent } from './components/pages/login/login.component';
@@ -13,13 +12,16 @@ import { ReviewsPageComponent } from './components/pages/add-review-page/reviews
 import { RentSupComponent } from './components/pages/rent-sup/rent-sup.component';
 import { LocationsComponent } from './components/pages/locations/locations.component';
 import { DespreNoiComponent } from './components/pages/despre-noi/despre-noi.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { EventsComponent } from './components/pages/events-page/events.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'search/:searchTerm', component: HomeComponent },
-  { path: 'tag/:tag', component: HomeComponent },
+  // { path: 'search/:searchTerm', component: HomeComponent },
+  // { path: 'tag/:tag', component: HomeComponent },
   { path: 'food/:id', component: FoodDetailsComponent },
   { path: 'cart-page', component: CartComponent },
+  { path: 'events', component: EventsComponent },
   { path: 'contact-us', component: ContactUsPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterPageComponent },
