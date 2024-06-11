@@ -15,7 +15,7 @@ router.get(
     //   return;
     // }
 
-    await FoodModel.create(sample_foods[foodsCount - 1]);
+    await FoodModel.create(sample_foods);
     res.send("Seed is Done!");
   })
 );
