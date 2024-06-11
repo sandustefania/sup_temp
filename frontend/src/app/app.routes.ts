@@ -6,7 +6,7 @@ import { RegisterPageComponent } from './components/pages/register-page/register
 import { authGuard } from './auth/guards/auth.guard';
 import { ContactUsPageComponent } from './components/pages/contact-us-page/contact-us-page.component';
 import { isAdminGuard } from './auth/guards/isAdmin.guard';
-import { ReviewsPageComponent } from './components/pages/add-review-page/reviews-page.component';
+import { ReviewsPageComponent } from './components/pages/review-page/reviews-page.component';
 import { RentSupComponent } from './components/pages/rent-sup/rent-sup.component';
 import { LocationsComponent } from './components/pages/locations/locations.component';
 import { DespreNoiComponent } from './components/pages/despre-noi/despre-noi.component';

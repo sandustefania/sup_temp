@@ -1,20 +1,10 @@
-<!-- <app-search-bar></app-search-bar>
-<app-tags></app-tags> -->
-<app-not-found
-  [visible]="!events || !events.length"
-  resetLinkText="Reset Search"
-></app-not-found>
+
 <div class="evenimentele-noastre">
   <h1>EVENIMENTELE NOASTRE</h1>
 </div>
 <ul>
   <li *ngFor="let event of events">
-    <!-- <button
-      *ngIf="userService.currentUser.isAdmin"
-      (click)="deleteItem(event.id)"
-    >
-      Delete item
-    </button> -->
+
 
     <a routerLink="/event/{{ event.id }}"
       ><img [src]="event.imageUrl" [alt]="event.name"

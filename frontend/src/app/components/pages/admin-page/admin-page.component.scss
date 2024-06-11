@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 
     button {
         margin: 2rem;
+        width:200px;
+        background-color: var(--dark-blue);
 
         a {
             color: white;

@@ -1,12 +1,14 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">SUP IASI</a>
+    <a routerLink="/" class="logo">
+      <h1>SUP IASI</h1>
+    </a>
     <nav>
       <ul>
         <li *ngIf="isAdmin">
           <a
             routerLink="/admin-page"
-            style="background-color: red; color: white"
+            style="background-color: var(--orange); color: white"
             >Admin page</a
           >
         </li>

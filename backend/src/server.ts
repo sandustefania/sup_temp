@@ -9,7 +9,7 @@ import eventRouter from "./routers/event.router";
 import userRouter from "./routers/user.router";
 import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
-import restaurantRouter from "./routers/restaurant.router";
+import restaurantRouter from "./routers/sup.router";
 import path from "path";
 const multer = require("multer");
 

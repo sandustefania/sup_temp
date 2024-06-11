@@ -14,10 +14,7 @@ import { SupService } from '../../../services/sup.service';
 export class LocationsComponent {
   weatherData: any;
   constructor(private supService: SupService) {}
-  display: google.maps.LatLngLiteral = {
-    lat: 47.1682853512441,
-    lng: 27.615145896301517,
-  };
+ 
   center: google.maps.LatLngLiteral = {
     lat: 47.1682853512441,
     lng: 27.615145896301517,
@@ -25,9 +22,9 @@ export class LocationsComponent {
   zoom = 15;
 
   getWeather() {
-    this.supService.loadCurrentWeather().subscribe((res) => {
-      this.weatherData = res;
-      console.log(res);
+    this.supService.loadCurrentWeather().subscribe((serverResponse) => {
+      this.weatherData = serverResponse;
+      console.log(serverResponse);
     });
   }
   getWeatherIconUrl(iconCode: string): string {

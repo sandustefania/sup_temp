@@ -35,6 +35,8 @@ export class SupService {
 
   getMessages(): Observable<IContactUs[]> {
     return this.http.get<IContactUs[]>(GET_MESSAGES_URL);
+    // return this.http.get<any>('localhost:5000/api/sup/getMessages');
+
   }
 
   addReview(reviewForm: IReview) {

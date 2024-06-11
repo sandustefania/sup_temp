@@ -36,7 +36,7 @@ import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 export class ReviewsPageComponent {
   reviewForm!: FormGroup;
   reviews: IReview[] = [];
-  averageRating!: number;
+  averageRating!: any;
   reviewsCount!: number;
 
   constructor(
@@ -71,8 +71,8 @@ export class ReviewsPageComponent {
       (sum, review) => sum + review.rating,
       0
     );
-    this.reviewsCount = this.reviews.length;
-    this.averageRating = totalRating / this.reviewsCount;
+    this.reviewsCount = Number(this.reviews.length);
+    this.averageRating = Number(totalRating / this.reviewsCount).toFixed(2);;
   }
 
   submit() {

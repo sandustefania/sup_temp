@@ -8,6 +8,9 @@ header {
 
     a {
         color: var(--dark-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background: var(--dark-blue);
