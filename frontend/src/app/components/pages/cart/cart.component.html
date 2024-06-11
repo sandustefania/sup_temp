@@ -9,11 +9,11 @@
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
-        <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+        <img [src]="cartItem.event.imageUrl" [alt]="cartItem.event.name" />
       </div>
       <div>
-        <a routerLink="/food/{{ cartItem.food.id }}">
-          {{ cartItem.food.name }}</a
+        <a routerLink="/event/{{ cartItem.event.id }}">
+          {{ cartItem.event.name }}</a
         >
       </div>
 

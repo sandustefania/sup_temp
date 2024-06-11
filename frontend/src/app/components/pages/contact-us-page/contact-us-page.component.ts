@@ -8,7 +8,7 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { RestaurantService } from '../../../services/restaurant.service';
+import { SupService } from '../../../services/sup.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TitleComponent } from '../../partials/title/title.component';
@@ -32,7 +32,7 @@ export class ContactUsPageComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private restaurantService: RestaurantService,
+    private supService: SupService,
     private router: Router,
     private toastrService: ToastrService,
     private userService: UserService
@@ -52,7 +52,7 @@ export class ContactUsPageComponent {
   }
 
   submit() {
-    this.restaurantService
+    this.supService
       .addMessage({
         name: this.fc.name.value,
         email: this.fc.email.value,

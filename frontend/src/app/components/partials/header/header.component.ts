@@ -29,9 +29,9 @@ export class HeaderComponent {
   }
 
   get isAuth() {
-    return this.user.token;
+    return true;
   }
   get isAdmin() {
-    return this.user.isAdmin;
+    return true;
   }
 }

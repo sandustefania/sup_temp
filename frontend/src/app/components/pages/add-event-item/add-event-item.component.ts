@@ -8,15 +8,15 @@ import {
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RestaurantService } from '../../../services/restaurant.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { SupService } from '../../../services/sup.service';
 
 @Component({
-  selector: 'app-add-food-item',
+  selector: 'app-add-event-item',
   standalone: true,
   imports: [
     CommonModule,
@@ -25,16 +25,16 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     GoogleMapsModule,
   ],
-  templateUrl: './add-food-item.component.html',
-  styleUrl: './add-food-item.component.scss',
+  templateUrl: './add-event-item.component.html',
+  styleUrl: './add-event-item.component.scss',
 })
-export class AddFoodItemComponent {
+export class AddEventItemComponent {
   addItemForm!: FormGroup;
   selectedFile = '';
 
   constructor(
     private fb: FormBuilder,
-    private restaurantService: RestaurantService,
+    private supService: SupService,
     private toastrService: ToastrService,
     private router: Router
   ) {}
@@ -59,7 +59,7 @@ export class AddFoodItemComponent {
     formData.append('price', this.addItemForm.get('price')?.value);
     formData.append('imageUrl', this.selectedFile);
 
-    this.restaurantService.addFoodItem(formData).subscribe({
+    this.supService.addEventItem(formData).subscribe({
       next: () => this.router.navigateByUrl('/'),
       error: (error) => {
         this.toastrService.error(error.error, 'Error');

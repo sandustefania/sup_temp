@@ -5,13 +5,13 @@ const BASE_URL = 'http://localhost:5000';
 // const production = process.env.NODE_ENV === 'production';
 // const BASE_URL = production ? '' : 'http://localhost:5000/';
 
-export const FOODS_URL = BASE_URL + '/api/foods';
-export const FOODS_TAGS_URL = FOODS_URL + '/tags';
-//export const FOODS_TAGS_URL = BASE_URL + '/api/foods/tags';
+export const EVENTS_URL = BASE_URL + '/api/events';
+export const EVENTS_TAGS_URL = EVENTS_URL + '/tags';
+//export const EVENTS_TAGS_URL = BASE_URL + '/api/events/tags';
 
-export const FOODS_BY_SEARCH_URL = FOODS_URL + '/search/';
-export const FOODS_BY_TAG_URL = FOODS_URL + '/tag/';
-export const FOODS_BY_ID_URL = FOODS_URL + '/';
+export const EVENTS_BY_SEARCH_URL = EVENTS_URL + '/search/';
+export const EVENTS_BY_TAG_URL = EVENTS_URL + '/tag/';
+export const EVENTS_BY_ID_URL = EVENTS_URL + '/';
 
 //----Login
 export const USER_LOGIN_URL = BASE_URL + '/api/users/login';
@@ -29,12 +29,11 @@ export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 
 //-----Restaurant
 export const RESTAURANT_URL = BASE_URL + '/api/restaurant';
-//-----Add-Food-Item
+//-----Add-Event-Item
 
 export const WEATHER_URL = RESTAURANT_URL + '/weather';
 //AR TREBUI ADMIN?
-export const ADD_FOOD_ITEM_URL = RESTAURANT_URL + '/addFoodItem';
-export const DELETE_FOOD_ITEM_URL = RESTAURANT_URL + '/deleteFoodItem/';
+export const ADD_EVENT_ITEM_URL = RESTAURANT_URL + '/addEventItem';
 //-----Messages
 export const ADD_MESSAGE_URL = RESTAURANT_URL + '/addMessage';
 export const GET_MESSAGES_URL = RESTAURANT_URL + '/getMessages';

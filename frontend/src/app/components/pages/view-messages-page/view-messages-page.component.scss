@@ -1,7 +1,23 @@
 .container {
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
     height: 90vh;
+
+    ul {
+        display: flex;
+
+        li {
+            padding: 50px;
+            list-style: none;
+            border: 2px solid var(--light-blue);
+            border-radius: 5px;
+            margin: 20px;
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
 }

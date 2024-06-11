@@ -1,13 +1,15 @@
 .container ul {
+    margin-top: 100px;
     display: flex;
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-
+    height: 80vh;
 
 
     li {
+        margin-top: 100px;
         background-color: white;
         padding: 0 2rem;
         margin: 1rem;

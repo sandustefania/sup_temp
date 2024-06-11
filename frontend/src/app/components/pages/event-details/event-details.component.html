@@ -1,18 +1,18 @@
 <app-not-found
-  [visible]="!foodDetails"
-  notFoundMessage="Food Not Found!"
+  [visible]="!eventDetails"
+  notFoundMessage="Event Not Found!"
   resetLinkText="Back to Homepage"
 ></app-not-found>
 <h1>EVENIMENT</h1>
-<div *ngIf="foodDetails" class="container">
+<div *ngIf="eventDetails" class="container">
   <img
-    [src]="foodDetails.imageUrl"
-    [alt]="foodDetails.name"
+    [src]="eventDetails.imageUrl"
+    [alt]="eventDetails.name"
     class="item-image"
   />
   <div class="details">
     <div class="header">
-      <span class="name">{{ foodDetails.name }}</span>
+      <span class="name">{{ eventDetails.name }}</span>
     </div>
 
     <div class="item-details">
@@ -22,7 +22,7 @@
         width="31px"
         height="31px"
       />
-      <p>Locatie: {{ foodDetails.locatie }}</p>
+      <p>Locatie: {{ eventDetails.locatie }}</p>
     </div>
     <div class="item-details">
       <img
@@ -31,7 +31,7 @@
         width="31px"
         height="31px"
       />
-      <p>Data: {{ foodDetails.data }}</p>
+      <p>Data: {{ eventDetails.data }}</p>
     </div>
 
     <div class="item-details">
@@ -41,7 +41,7 @@
         width="31px"
         height="31px"
       />
-      <p>Ora: {{ foodDetails.ora }}</p>
+      <p>Ora: {{ eventDetails.ora }}</p>
     </div>
     <div class="item-details">
       <img
@@ -50,7 +50,7 @@
         width="31px"
         height="31px"
       />
-      <p>Numar de locuri: {{ foodDetails.nrLocuri }} persoane</p>
+      <p>Numar de locuri: {{ eventDetails.nrLocuri }} persoane</p>
     </div>
 
     <div class="item-details">
@@ -60,11 +60,11 @@
         width="31px"
         height="31px"
       />
-      <p>Pret/persoana: {{ foodDetails.price | currency }}</p>
+      <p>Pret/persoana: {{ eventDetails.price | currency }}</p>
     </div>
 
     <!-- <div class="tags">
-      <a *ngFor="let tag of foodDetails.tags" routerLink="/tag/{{ tag }}"
+      <a *ngFor="let tag of eventDetails.tags" routerLink="/tag/{{ tag }}"
         >{{ tag }}
       </a>
     </div> -->

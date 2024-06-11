@@ -5,7 +5,7 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import foodRouter from "./routers/food.router";
+import eventRouter from "./routers/event.router";
 import userRouter from "./routers/user.router";
 import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
@@ -28,7 +28,7 @@ app.use(
   })
 );
 
-app.use("/api/foods", foodRouter);
+app.use("/api/events", eventRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/restaurant", restaurantRouter);

@@ -1,4 +1,4 @@
-export const sample_foods: any[] = [
+export const sample_events: any[] = [
   {
     id: "1",
     name: "Eveniment",

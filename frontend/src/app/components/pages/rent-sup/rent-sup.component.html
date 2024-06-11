@@ -1,11 +1,5 @@
 <div class="main-container">
   <h1>RENT A SUP!</h1>
-  <h2>
-    Sups fleet Available : {{ numberSupsAvailable }}
-    <button (click)="checkSupsAvailable(rentSupsForm.value.selectedDate)">
-      Check
-    </button>
-  </h2>
 
   <h2>How many SUPs do you want?</h2>
   <form [formGroup]="rentSupsForm" (ngSubmit)="submit()">

@@ -1,4 +1,4 @@
-export class Food {
+export class Event {
   id!: string;
   name!: string;
   locatie!: string;

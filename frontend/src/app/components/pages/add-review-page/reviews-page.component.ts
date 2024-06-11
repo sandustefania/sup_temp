@@ -9,7 +9,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RestaurantService } from '../../../services/restaurant.service';
+import { SupService } from '../../../services/sup.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { ViewReviewsPageComponent } from '../view-reviews-page/view-reviews-page.component';
@@ -41,14 +41,14 @@ export class ReviewsPageComponent {
 
   constructor(
     private fb: FormBuilder,
-    private restaurantService: RestaurantService,
+    private supService: SupService,
     private toastrService: ToastrService,
     private router: Router,
     private userService: UserService
   ) {}
 
   ngOnInit() {
-    this.restaurantService.getReviews().subscribe((serverReviews) => {
+    this.supService.getReviews().subscribe((serverReviews) => {
       (this.reviews = serverReviews), this.calculateTotalRating();
     });
 
@@ -76,7 +76,7 @@ export class ReviewsPageComponent {
   }
 
   submit() {
-    this.restaurantService
+    this.supService
       .addReview({
         name: this.fc.name.value,
         email: this.fc.email.value,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RestaurantService } from '../../../services/restaurant.service';
+import { SupService } from '../../../services/sup.service';
 import { IEmail } from '../../../shared/interfaces/IEmail';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from '../../partials/title/title.component';
@@ -13,10 +13,10 @@ import { TitleComponent } from '../../partials/title/title.component';
 })
 export class ViewEmailsNewsletterPageComponent {
   emails: IEmail[] = [];
-  constructor(private restaurantService: RestaurantService) {}
+  constructor(private supService: SupService) {}
 
   ngOnInit() {
-    this.restaurantService
+    this.supService
       .getEmailNewsletter()
       .subscribe((serverEmails) => (this.emails = serverEmails));
   }

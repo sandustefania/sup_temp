@@ -5,7 +5,7 @@ import { ReviewModel } from "../models/review.model";
 import { EmailNewsletterModel } from "../models/emailNewsletter.model";
 import multer from "multer";
 import path from "path";
-import { FoodModel } from "../models/food.model";
+import { EventModel } from "../models/event.model";
 import axios from "axios";
 import { RentSupModel } from "../models/rentSups.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
@@ -25,14 +25,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Route handler for adding message with image upload
-router.post("/addFoodItem", upload.single("imageUrl"), async (req, res) => {
+router.post("/addEventItem", upload.single("imageUrl"), async (req, res) => {
   const { name, price } = req.body;
   const imageUrl = req.file ? req.file.path : "";
 
   try {
-    const addFoodItem = new FoodModel({ name, price, imageUrl });
-    await addFoodItem.save();
-    res.send(addFoodItem);
+    const addEventItem = new EventModel({ name, price, imageUrl });
+    await addEventItem.save();
+    res.send(addEventItem);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -50,9 +50,9 @@ router.get("/weather", async (req, res) => {
 });
 
 router.delete(
-  "/deleteFoodItem/:foodId",
+  "/deleteEventItem/:eventId",
   expressAsyncHandler(async (req, res) => {
-    const item = await FoodModel.findByIdAndDelete(req.params.foodId);
+    const item = await EventModel.findByIdAndDelete(req.params.eventId);
     res.send(item);
   })
 );

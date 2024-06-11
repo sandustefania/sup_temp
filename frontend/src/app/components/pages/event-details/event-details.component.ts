@@ -1,39 +1,39 @@
 import { Component } from '@angular/core';
-import { FoodService } from '../../../services/food.service';
-import { Food } from '../../../shared/models/Food';
+import { Event } from '../../../shared/models/Event';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../../services/cart.service';
 import { NotFoundComponent } from '../../partials/not-found/not-found.component';
+import { EventService } from '../../../services/event.service';
 
 @Component({
-  selector: 'app-food-details',
+  selector: 'app-event-details',
   standalone: true,
   imports: [StarRatingModule, CommonModule, RouterLink, NotFoundComponent],
-  templateUrl: './food-details.component.html',
-  styleUrl: './food-details.component.scss',
+  templateUrl: './event-details.component.html',
+  styleUrl: './event-details.component.scss',
   providers: [StarRatingConfigService],
 })
-export class FoodDetailsComponent {
-  foodDetails!: Food;
+export class EventDetailsComponent {
+  eventDetails!: Event;
 
   constructor(
-    private foodService: FoodService,
+    private eventService: EventService,
     activatedRoute: ActivatedRoute,
     private cartService: CartService,
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params.id)
-        foodService.getFoodById(params.id).subscribe((serverFood) => {
-          this.foodDetails = serverFood;
+        eventService.getEventById(params.id).subscribe((serverEvent) => {
+          this.eventDetails = serverEvent;
         });
     });
   }
 
   addToCart() {
-    this.cartService.addToCart(this.foodDetails);
+    this.cartService.addToCart(this.eventDetails);
     this.router.navigateByUrl('/cart-page');
   }
 }

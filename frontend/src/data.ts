@@ -1,55 +1,11 @@
-import { Food } from './app/shared/models/Food';
+import { Event } from './app/shared/models/Event';
 import { Tag } from './app/shared/models/Tag';
 import { User } from './app/shared/models/User';
 
-export const sample_foods: Food[] = [
+export const sample_events: Event[] = [
   {
     id: '1',
-    name: 'Pizza carne',
-    locatie: 'Lacul Tarnita',
-    data: '20 iunie 2024',
-    ora: '12:00 - 17:00',
-    price: 35,
-    tags: ['FastFood', 'Pizza', 'Lunch'],
-    imageUrl: 'assets/food-1.jpg',
-    nrLocuri: '40',
-  },
-  {
-    id: '2',
-    name: 'Calzone',
-    locatie: 'Lacul Tarnita',
-    data: '20 iunie 2024',
-    ora: '12:00 - 17:00',
-    price: 20,
-    tags: ['FastFood', 'Snack'],
-    imageUrl: 'assets/food-2.jpg',
-    nrLocuri: '20',
-  },
-  {
-    id: '3',
-    name: 'Lasagna',
-    locatie: 'Lacul Tarnita',
-    data: '20 iunie 2024',
-    ora: '12:00 - 17:00',
-    price: 25,
-    tags: ['FastFood', 'Lunch'],
-    imageUrl: 'assets/food-3.jpg',
-    nrLocuri: '30',
-  },
-  {
-    id: '4',
-    name: 'Pizza Chicken',
-    locatie: 'Lacul Tarnita',
-    data: '20 iunie 2024',
-    ora: '12:00 - 17:00',
-    price: 35,
-    tags: ['FastFood', 'Pizza', 'Lunch'],
-    imageUrl: 'assets/food-4.jpg',
-    nrLocuri: '40',
-  },
-  {
-    id: '5',
-    name: 'Pizza Vegan',
+    name: 'Eveniment',
     locatie: 'Lacul Tarnita',
     data: '20 iunie 2024',
     ora: '12:00 - 17:00',
@@ -59,8 +15,8 @@ export const sample_foods: Food[] = [
     nrLocuri: '40',
   },
   {
-    id: '6',
-    name: 'Tiramisu',
+    id: '2',
+    name: 'Eveniment',
     locatie: 'Lacul Tarnita',
     data: '20 iunie 2024',
     ora: '12:00 - 17:00',
@@ -70,8 +26,8 @@ export const sample_foods: Food[] = [
     nrLocuri: '10',
   },
   {
-    id: '7',
-    name: 'Cheeseburger',
+    id: '3',
+    name: 'Eveniment',
     locatie: 'Lacul Tarnita',
     data: '20 iunie 2024',
     ora: '12:00 - 17:00',
@@ -82,15 +38,7 @@ export const sample_foods: Food[] = [
   },
 ];
 
-export const sample_tags: Tag[] = [
-  { name: 'All', count: 6 },
-  { name: 'FastFood', count: 3 },
-  { name: 'Pizza', count: 3 },
-  { name: 'Lunch', count: 3 },
-  { name: 'Snack', count: 1 },
-  { name: 'Vegan', count: 1 },
-  { name: 'Desert', count: 1 },
-];
+export const sample_tags: Tag[] = [];
 
 export const sample_users: any[] = [
   {
